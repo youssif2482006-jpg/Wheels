@@ -1,0 +1,2008 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Wheels Automotive — Drive The Change</title>
+<meta name="description" content="Cairo's premier luxury and zero-mile 
+dealership. 46 El-Thawra Street, Almazah, Heliopolis."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#080808;--surface:#0f0f0f;--surface2:#161616;--surface3:#1e1e1e;
+  --gold:#c9a84c;--gold-bright:#e4c06a;--gold-glow:#f5d98a;--gold-dim:#a8893a;
+  --ruby:#9b1c1c; --ruby-bright:#c81e1e;
+  --sapphire:#1e3a8a; --sapphire-bright:#2563eb;
+  --emerald:#065f46;
+  --text:#f5f0e8;--text2:#b8b2a8;--text3:#6a6460;
+  --border:rgba(201,168,76,.12);--border2:rgba(201,168,76,.28);--border3:rgba(201,168,76,.5);
+  --shadow:rgba(0,0,0,.5);
+}
+#theme-btn:hover{border-color:var(--gold)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--gold);border-radius:2px}
+::selection{background:rgba(201,168,76,.25);color:var(--text)}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+img{transition:opacity .4s ease;max-width:100%}
+img:not(.loaded){opacity:0}img.loaded{opacity:1}
+video{transition:opacity .4s ease;max-width:100%}
+video:not(.loaded){opacity:0}video.loaded{opacity:1}
+
+.page{display:none}.page.active{display:block}
+#sp{position:fixed;top:0;left:0;height:2px;background:var(--gold);z-index:1001;transition:width .1s linear;pointer-events:none}
+
+[data-r]{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
+[data-r="l"]{transform:translateX(-35px)}[data-r="r"]{transform:translateX(35px)}[data-r="s"]{transform:scale(.94);opacity:0}
+[data-r].on{opacity:1;transform:none}
+[data-d="1"]{transition-delay:.1s}[data-d="2"]{transition-delay:.2s}[data-d="3"]{transition-delay:.3s}[data-d="4"]{transition-delay:.4s}[data-d="5"]{transition-delay:.5s}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.8rem 2rem;border-radius:3px;font-family:'DM Sans',sans-serif;font-size:.72rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;transition:all .3s ease;text-decoration:none;border:none;line-height:1}
+.btn-sm{padding:.55rem 1.2rem;font-size:.68rem}
+.btn-lg{padding:1rem 2.5rem;font-size:.78rem}
+.btn-p{background:var(--gold);color:var(--bg)}
+.btn-p:hover{background:var(--gold-bright);transform:translateY(-1px);box-shadow:0 0 24px rgba(201,168,76,.3)}
+.btn-r{background:var(--ruby);color:white}
+.btn-r:hover{background:var(--ruby-bright);transform:translateY(-1px);box-shadow:0 0 24px rgba(155,28,28,.3)}
+.btn-s{background:var(--sapphire);color:white}
+.btn-s:hover{background:var(--sapphire-bright);transform:translateY(-1px);box-shadow:0 0 24px rgba(30,58,138,.3)}
+.btn-o{background:transparent;border:1px solid var(--gold);color:var(--gold)}
+.btn-o:hover{background:var(--gold);color:var(--bg)}
+.btn-g{background:transparent;border:1px solid var(--border2);color:var(--text2)}
+.btn-g:hover{border-color:var(--gold);color:var(--gold)}
+.btn-w{width:100%}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:3px;transition:all .3s ease}
+.card:hover{border-color:var(--border2);transform:translateY(-4px);box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.fi{font-family:'Jost',sans-serif}.fi,.form-inp,.form-sel,.form-ta{width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:3px;padding:.75rem 1rem;color:var(--text);font-family:'DM Sans',sans-serif;font-size:.875rem;transition:border-color .3s;outline:none}
+.form-inp::placeholder,.form-ta::placeholder{color:var(--text3)}
+.form-inp:focus,.form-sel:focus,.form-ta:focus{border-color:var(--gold-bright)}
+.form-sel{cursor:pointer;color-scheme:dark}
+.form-ta{resize:vertical;min-height:120px}
+.fl{font-size:.65rem;font-weight:500;text-transform:uppercase;letter-spacing:.2em;color:var(--text3);display:block;margin-bottom:.4rem}
+.ey{font-family:'DM Sans',sans-serif;font-size:.65rem;font-weight:400;text-transform:uppercase;letter-spacing:.35em;color:var(--gold)}
+.st{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3rem);font-weight:300;line-height:1.1}
+.st em{font-style:italic;color:var(--gold)}
+.pr{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--gold-bright)}
+.con{max-width:1440px;margin:0 auto;padding:0 5rem}
+.sec{padding:7rem 0}
+@media(max-width:768px){.con{padding:0 1.25rem}.sec{padding:4rem 0}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes pulseRing{0%{transform:scale(1);opacity:.6}100%{transform:scale(1.8);opacity:0}}
+@keyframes slideR{from{transform:translateX(80px);opacity:0}to{transform:translateX(0);opacity:1}}
+@keyframes scrollLn{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+@keyframes barG{from{width:0}to{width:var(--bw)}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}[data-r]{opacity:1;transform:none}}
+
+/* NAV */
+#nav{position:fixed;top:0;left:0;right:0;z-index:1000;transition:all .4s ease}
+#nav.sc{background:rgba(15,15,15,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);box-shadow:0 4px 24px rgba(0,0,0,.4)}
+.ncon{max-width:1440px;margin:0 auto;padding:0 5rem;display:flex;align-items:center;justify-content:space-between;height:72px}
+.nl{display:flex;gap:2.5rem;list-style:none}
+.na{font-size:.78rem;text-transform:uppercase;letter-spacing:.18em;color:var(--text2);cursor:pointer;text-decoration:none;position:relative;transition:color .3s;padding-bottom:4px}
+.na::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--gold);transition:width .3s}
+.na:hover,.na.act{color:var(--gold)}.na:hover::after,.na.act::after{width:100%}
+.wb{position:relative;color:var(--text2);cursor:pointer;text-decoration:none;transition:color .3s;font-size:.9rem}
+.wb:hover{color:var(--gold)}
+.wbn{position:absolute;top:-6px;right:-8px;width:16px;height:16px;background:var(--ruby);color:white;border-radius:50%;font-size:.55rem;font-weight:700;display:flex;align-items:center;justify-content:center}
+.hb{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+.hb span{display:block;width:24px;height:1px;background:var(--text2);transition:all .3s}
+#mm{position:fixed;inset:0;background:var(--bg);z-index:999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2rem;transform:translateX(100%);transition:transform .5s cubic-bezier(.77,0,.175,1)}
+#mm.open{transform:translateX(0)}
+#mm a{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:300;color:var(--text2);text-decoration:none;transition:color .3s;cursor:pointer}
+#mm a:hover{color:var(--gold)}
+@media(max-width:1024px){.nl,.nc-d{display:none!important}.hb{display:flex}}
+
+/* HERO */
+#hero{height:100svh;position:relative;display:flex;align-items:center;overflow:hidden}
+#hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:1;pointer-events:none;transition: opacity .4s ease;}
+.hov-layers{position:absolute;inset:0;pointer-events:none;}
+.hw{display:inline-block;opacity:0;transform:translateY(20px);animation:fadeUp .6s ease forwards}
+
+/* MARQUEE */
+.mq{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:.9rem 0;overflow:hidden}
+.mq-t{display:flex;gap:0;white-space:nowrap;animation:marquee 30s linear infinite}
+.mq:hover .mq-t{animation-play-state:paused}
+.mq-i{font-family:'DM Sans',sans-serif;font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--text3);padding:0 2rem}
+.mq-d{color:var(--ruby);padding:0 .5rem}
+
+/* STATS */
+.sg{display:grid;grid-template-columns:repeat(4,1fr)}
+.si{text-align:center;padding:2rem 1rem;position:relative}
+.si+.si::before{content:'';position:absolute;left:0;top:20%;bottom:20%;width:1px;background:var(--border)}
+.sn{font-family:'Cormorant Garamond',serif;font-size:2.8rem;color:var(--gold);line-height:1}
+.sl{font-size:.65rem;text-transform:uppercase;letter-spacing:.2em;color:var(--text3);margin-top:.3rem}
+@media(max-width:768px){.sg{grid-template-columns:repeat(2,1fr)}.si+.si::before{display:none}}
+
+/* CAR CARD */
+.cc{border-radius:3px;overflow:hidden;background:var(--surface);border:1px solid var(--border);transition:all .3s ease;cursor:pointer}
+.cc:hover{border-color:var(--border2);transform:translateY(-4px);box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.cc-img{height:200px;overflow:hidden;position:relative;background:var(--surface2)}
+.cc-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.cc:hover .cc-img img{transform:scale(1.04)}
+.cc-badge{position:absolute;top:.7rem;left:.7rem;background:var(--sapphire);color:white;font-size:.58rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:.25rem .6rem;border-radius:2px}
+.cc-heart{position:absolute;top:.7rem;right:.7rem;width:28px;height:28px;border-radius:50%;background:rgba(8,8,8,.7);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--text3);font-size:.8rem;transition:all .3s}
+.cc-heart.saved,.cc-heart:hover{color:var(--ruby)}
+.cc-body{padding:1.2rem}
+.cc-brand{font-size:.6rem;text-transform:uppercase;letter-spacing:.25em;color:var(--gold);margin-bottom:.2rem}
+.cc-name{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;margin-bottom:.2rem}
+.cc-meta{font-size:.75rem;color:var(--text3);margin-bottom:.8rem}
+.cc-specs{display:flex;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-bottom:.8rem;padding:.6rem 0}
+.cs{flex:1;text-align:center}
+.cs-v{font-size:.78rem;font-weight:500;color:var(--text)}
+.cs-k{font-size:.58rem;text-transform:uppercase;letter-spacing:.12em;color:var(--text3)}
+.cc-price{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-style:italic;color:var(--gold-bright);margin-bottom:.9rem}
+.cc-acts{display:flex;gap:.6rem}
+
+/* SCROLL ROW */
+.sr{display:flex;gap:1.2rem;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:4px}
+.sr::-webkit-scrollbar{display:none}
+.sr .cc{min-width:300px;flex-shrink:0;scroll-snap-align:start}
+
+/* WHY */
+.why-g{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem}
+.why-i{text-align:center;padding:2rem 1.5rem}
+.why-icon{font-size:2rem;margin-bottom:1rem}
+.why-n{font-family:'Cormorant Garamond',serif;font-size:2.5rem;color:var(--gold);margin-bottom:.3rem}
+.why-l{font-size:.75rem;text-transform:uppercase;letter-spacing:.15em;color:var(--text);margin-bottom:.5rem}
+.why-d{font-size:.82rem;color:var(--text3);line-height:1.8}
+@media(max-width:768px){.why-g{grid-template-columns:repeat(2,1fr)}}
+
+/* BRANDS */
+.brands-g{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem 2rem}
+.bi{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--text3);cursor:default;transition:all .3s;padding:.4rem .8rem;border-left:2px solid transparent}
+.bi:hover{color:var(--sapphire-bright);border-left-color:var(--sapphire-bright)}
+
+/* HOW IT WORKS */
+.how-g{display:flex;gap:0;position:relative}
+.how-g::before{content:'';position:absolute;top:28px;left:10%;right:10%;height:1px;border-top:1px dashed var(--gold-dim);z-index:0}
+.how-i{flex:1;text-align:center;padding:0 1.5rem;position:relative;z-index:1}
+.how-n{font-family:'Cormorant Garamond',serif;font-size:5rem;font-weight:700;color:var(--gold);opacity:.08;line-height:1;margin-bottom:-2rem;display:block}
+.how-ic{width:56px;height:56px;border:1px solid var(--border2);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto .8rem;font-size:1.2rem;background:var(--surface);position:relative;z-index:1}
+.how-t{font-size:.82rem;font-weight:500;color:var(--text);margin-bottom:.4rem}
+.how-d{font-size:.75rem;color:var(--text3);line-height:1.7}
+@media(max-width:768px){.how-g{flex-direction:column;gap:1.5rem}.how-g::before{display:none}}
+
+/* TESTIMONIALS */
+.test-i{display:none;animation:fadeIn .4s ease}
+.test-i.act{display:block}
+.test-q{font-family:'Cormorant Garamond',serif;font-size:clamp(1.2rem,2.5vw,1.6rem);font-style:italic;font-weight:300;line-height:1.6;color:var(--text);margin-bottom:2rem;position:relative;z-index:1}
+.test-a{display:flex;align-items:center;gap:1rem}
+.test-img{width:52px;height:52px;border-radius:50%;border:2px solid var(--ruby);object-fit:cover}
+.tdot{width:24px;height:3px;background:var(--surface3);border-radius:2px;cursor:pointer;transition:all .3s}
+.tdot.act{width:36px;background:var(--ruby)}
+
+/* CTA BANNER */
+#ctab{background:linear-gradient(135deg,var(--sapphire),#080a14,#080808);position:relative;overflow:hidden}
+#ctab::before{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(-45deg,rgba(255,255,255,.04) 0px,rgba(255,255,255,.04) 1px,transparent 1px,transparent 14px)}
+
+/* INVENTORY */
+.inv-lay{display:grid;grid-template-columns:260px 1fr;gap:2rem}
+.fsb{background:var(--surface);border:1px solid var(--border);border-radius:3px;padding:1.5rem;position:sticky;top:88px;height:fit-content}
+.fsh{font-size:.62rem;text-transform:uppercase;letter-spacing:.3em;color:var(--gold);margin-bottom:1.5rem;padding-bottom:.8rem;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+.fsg{margin-bottom:1.5rem}
+.fsg-t{font-size:.68rem;text-transform:uppercase;letter-spacing:.2em;color:var(--text);margin-bottom:.7rem;display:block}
+.fck{display:flex;align-items:center;gap:.6rem;margin-bottom:.4rem;cursor:pointer}
+.fck input{accent-color:var(--gold);width:14px;height:14px}
+.fck span{font-size:.8rem;color:var(--text2);transition:color .2s}
+.fck:hover span{color:var(--text)}
+.pill-g{display:flex;flex-wrap:wrap;gap:.4rem}
+.pill{padding:.35rem .8rem;border:1px solid var(--border);border-radius:3px;font-size:.68rem;cursor:pointer;transition:all .2s;color:var(--text3)}
+.pill:hover,.pill.on{border-color:var(--gold);color:var(--gold);background:rgba(201,168,76,.06)}
+.cg{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.sortbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.2rem;padding-bottom:.8rem;border-bottom:1px solid var(--border)}
+@media(max-width:1024px){.inv-lay{grid-template-columns:1fr}.fsb{display:none}.mob-filter-bar{display:flex!important}}
+.mob-filter-bar{display:none;position:sticky;bottom:0;background:var(--surface);border-top:1px solid var(--border);padding:.75rem 1.25rem;gap:1rem;z-index:100}
+@media(max-width:768px){.cg{grid-template-columns:1fr}}
+@media(min-width:768px) and (max-width:1024px){.cg{grid-template-columns:repeat(2,1fr)}}
+
+/* DETAIL */
+.det-lay{display:grid;grid-template-columns:1fr 380px;gap:3rem;align-items:start}
+.dsb{position:sticky;top:88px;background:var(--surface);border:1px solid var(--border);border-radius:3px;padding:1.8rem}
+.gth-s{display:flex;gap:.5rem;overflow-x:auto;scrollbar-width:none;background:var(--surface);border-bottom:1px solid var(--border);padding:.8rem 5rem}
+.gth{width:90px;height:60px;object-fit:cover;border-radius:2px;border:2px solid transparent;cursor:pointer;transition:all .3s;flex-shrink:0}
+.gth.act,.gth:hover{border-color:var(--sapphire-bright)}
+.acc-i{border:1px solid var(--border);border-radius:3px;margin-bottom:.4rem;overflow:hidden}
+.acc-h{display:flex;justify-content:space-between;align-items:center;padding:.9rem 1.1rem;background:var(--surface);cursor:pointer;transition:background .3s;user-select:none}
+.acc-h:hover{background:var(--surface2)}
+.acc-ch{color:var(--gold);transition:transform .3s;font-size:.8rem}
+.acc-i.open .acc-ch{transform:rotate(180deg)}
+.acc-b{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.sr-row{display:flex;justify-content:space-between;padding:.65rem 1.1rem;border-bottom:1px solid var(--border);font-size:.85rem}
+.sr-row:last-child{border-bottom:none}.sr-row:nth-child(odd){background:var(--surface2)}
+.sr-k{font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;color:var(--text3)}
+.tag{display:inline-block;padding:.25rem .65rem;background:var(--surface2);border:1px solid var(--border);border-radius:3px;font-size:.7rem;color:var(--text2);margin:.15rem}
+.hl-g{display:grid;grid-template-columns:repeat(2,1fr);gap:.6rem;margin-bottom:1.2rem}
+.hl-i{background:var(--surface2);border:1px solid var(--border);border-radius:3px;padding:.8rem;text-align:center}
+.hl-v{font-size:.78rem;font-weight:500;color:var(--text)}
+.hl-k{font-size:.58rem;text-transform:uppercase;letter-spacing:.12em;color:var(--text3);margin-top:.2rem}
+.fc-o{background:var(--surface2);border:1px solid var(--border2);border-radius:3px;padding:.8rem;text-align:center;margin-top:.8rem}
+@media(max-width:1024px){.det-lay{grid-template-columns:1fr}.dsb{position:static;margin-top:2rem}.gth-s{padding:.8rem 1.25rem}}
+
+/* BOOKING */
+.book-lay{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;max-width:1200px;margin:0 auto}
+.sdots{display:flex;align-items:center;margin-bottom:2rem}
+.sdot{width:28px;height:28px;border-radius:50%;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.7rem;color:var(--text3);flex-shrink:0;transition:all .3s}
+.sdot.act{border-color:var(--sapphire-bright);background:var(--sapphire-bright);color:white}
+.sdot.dn{border-color:var(--sapphire-bright);color:var(--sapphire-bright)}
+.sln{flex:1;height:1px;background:var(--border);margin:0 .3rem}
+.bstep{display:none}.bstep.act{display:block}
+.cal-g{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;margin-bottom:.8rem}
+.cal-dh{text-align:center;font-size:.62rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text3);padding:.5rem 0}
+.cal-d{aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-size:.78rem;border-radius:2px;cursor:pointer;transition:all .2s;color:var(--text2)}
+.cal-d:hover{background:var(--surface2);color:var(--text)}
+.cal-d.today{border:1px solid var(--gold);color:var(--gold)}
+.cal-d.sel{background:var(--sapphire-bright);color:white;font-weight:600}
+.cal-d.past{color:var(--text3);opacity:.35;cursor:default}
+.ts-g{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem}
+.ts{padding:.55rem;border:1px solid var(--border);border-radius:3px;font-size:.73rem;cursor:pointer;transition:all .2s;text-align:center;background:none;color:var(--text3);font-family:'DM Sans',sans-serif}
+.ts:hover{border-color:var(--gold);color:var(--gold)}
+.ts.sel{background:var(--sapphire-bright);color:white;border-color:var(--sapphire-bright)}
+@media(max-width:1024px){.book-lay{grid-template-columns:1fr;gap:3rem}}
+
+.reveal-hidden {
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
+  transition: none !important;
+[data-r]:not(.on) {
+  transition: none !important;
+  opacity: 0 !important;
+}
+}
+
+/* SERVICES */
+.sv-g{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.sv-c{background:var(--surface);border:1px solid var(--border);border-radius:3px;padding:2rem 1.8rem;transition:all .3s;position:relative;overflow:hidden}
+.sv-c::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--ruby),transparent);transform:scaleX(0);transition:transform .4s}
+.sv-c:hover{border-color:var(--ruby);transform:translateY(-4px)}.sv-c:hover::after{transform:scaleX(1)}
+.sv-ic{font-size:1.8rem;margin-bottom:1.2rem}
+.sv-n{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;margin-bottom:.6rem}
+.sv-d{font-size:.82rem;color:var(--text3);line-height:1.8}
+@media(max-width:768px){.sv-g{grid-template-columns:1fr}}
+@media(min-width:768px) and (max-width:1024px){.sv-g{grid-template-columns:repeat(2,1fr)}}
+
+/* ABOUT */
+.tl{position:relative}
+.tl::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,transparent,var(--sapphire-bright),transparent);transform:translateX(-50%)}
+.tl-i{display:grid;grid-template-columns:1fr 1fr;gap:4rem;margin-bottom:3rem;align-items:center}
+.tl-i:nth-child(even) .tl-c{order:-1}
+.tl-y{font-family:'Cormorant Garamond',serif;font-size:3rem;font-style:italic;color:var(--sapphire-bright);opacity:.35;text-align:right;padding-right:2rem}
+.tl-i:nth-child(even) .tl-y{text-align:left;padding-right:0;padding-left:2rem}
+.tl-c{background:var(--surface);border:1px solid var(--border);border-radius:3px;padding:1.5rem}
+.tl-c h4{font-family:'Cormorant Garamond',serif;font-size:1.1rem;margin-bottom:.5rem}
+.tl-c p{font-size:.82rem;color:var(--text3);line-height:1.8}
+.team-g{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.tm-c{background:var(--surface);border:1px solid var(--border);border-radius:3px;padding:1.8rem;text-align:center;transition:all .3s}
+.tm-c:hover{border-color:var(--border2);transform:translateY(-3px)}
+.tm-img{width:80px;height:80px;border-radius:50%;border:2px solid var(--sapphire-bright);object-fit:cover;margin:0 auto 1rem}
+.tm-n{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;margin-bottom:.2rem}
+.tm-r{font-size:.72rem;color:var(--text3)}
+@media(max-width:768px){.tl::before{left:0}.tl-i{grid-template-columns:1fr;gap:1rem}.tl-i:nth-child(even) .tl-c{order:0}.tl-y,.tl-i:nth-child(even) .tl-y{text-align:left;padding:0}.team-g{grid-template-columns:repeat(2,1fr)}}
+
+/* CONTACT */
+.ct-lay{display:grid;grid-template-columns:55fr 45fr;gap:4rem}
+.ct-d{display:flex;align-items:flex-start;gap:1rem;margin-bottom:1.5rem}
+.ct-ic{width:40px;height:40px;border:1px solid var(--border);border-radius:3px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.9rem}
+.ct-lb{font-size:.6rem;text-transform:uppercase;letter-spacing:.2em;color:var(--text3);margin-bottom:.2rem}
+.ct-v{font-size:.88rem;color:var(--text)}.ct-v a{color:var(--text);text-decoration:none;transition:color .3s}.ct-v a:hover{color:var(--gold)}
+@media(max-width:1024px){.ct-lay{grid-template-columns:1fr}}
+
+/* FOOTER */
+.ft{background:var(--surface);border-top:1px solid var(--border)}
+.ft-g{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:3rem;padding:5rem 0 3rem}
+.ft-h{font-size:.65rem;text-transform:uppercase;letter-spacing:.3em;color:var(--gold);margin-bottom:1.2rem}
+.ft-l{list-style:none;display:flex;flex-direction:column;gap:.6rem}
+.ft-l a{font-size:.82rem;color:var(--text3);cursor:pointer;text-decoration:none;transition:color .3s}.ft-l a:hover{color:var(--text)}
+.ft-sc{width:32px;height:32px;border:1px solid var(--border);border-radius:3px;display:inline-flex;align-items:center;justify-content:center;font-size:.68rem;color:var(--text3);text-decoration:none;transition:all .3s}
+.ft-sc:hover{border-color:var(--gold);color:var(--gold)}
+.ft-bot{border-top:1px solid var(--border);padding:1.2rem 0;display:flex;justify-content:space-between;align-items:center;font-size:.72rem;color:var(--text3)}
+@media(max-width:1024px){.ft-g{grid-template-columns:repeat(2,1fr);gap:2rem}}
+@media(max-width:768px){.ft-g{grid-template-columns:1fr}.ft-bot{flex-direction:column;gap:.5rem;text-align:center}}
+
+
+/* WA FLOAT */
+.waf{position:fixed;bottom:2rem;right:2rem;z-index:500;display:flex;align-items:center;gap:.8rem;text-decoration:none;animation:slideR .5s ease 2s both}
+.waf-lb{background:var(--surface2);border:1px solid var(--border);color:var(--text);font-size:.75rem;padding:.5rem .8rem;border-radius:3px;opacity:0;transform:translateX(8px);transition:all .3s;white-space:nowrap}
+.waf:hover .waf-lb{opacity:1;transform:translateX(0)}
+.waf-c{width:52px;height:52px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);position:relative;transition:transform .3s}
+.waf:hover .waf-c{transform:scale(1.1)}
+.waf-r{position:absolute;inset:-4px;border:2px solid #25D366;border-radius:50%;animation:pulseRing 4s ease-out infinite}
+#btt{position:fixed;bottom:6.2rem;right:2.2rem;z-index:500;width:38px;height:38px;border-radius:50%;background:transparent;border:1px solid var(--gold);color:var(--gold);cursor:pointer;font-size:.9rem;transition:all .3s;opacity:0;pointer-events:none;display:flex;align-items:center;justify-content:center}
+#btt.vis{opacity:1;pointer-events:all}
+#btt:hover{background:var(--gold);color:var(--bg)}
+#ck{position:fixed;bottom:0;left:0;right:0;z-index:800;background:var(--surface);border-top:1px solid var(--gold);padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;animation:fadeUp .5s ease 1s both}
+#ck.hid {
+  display: none !important;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ARRIVAL RIBBON */
+.arr-rib{position:absolute;top:14px;right:-30px;background:var(--ruby);color:white;font-size:.58rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.25rem 2.8rem;transform:rotate(45deg)}
+
+/* NEW SHOWROOM GALLERY */
+.gallery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 2rem; }
+.gallery-grid img { width: 100%; height: 250px; object-fit: cover; border-radius: 3px; }
+@media (max-width: 768px) { .gallery-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div id="sp"></div>
+<nav id="nav">
+<div class="ncon">
+  <a onclick="sp('home')" style="cursor:pointer;display:flex;align-items:center">
+    <span style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;letter-spacing:.15em;color:var(--gold)">WHEELS AUTOMOTIVE</span>
+  </a>
+  <ul class="nl">
+    <li><a class="na" data-p="home" onclick="sp('home')">Home</a></li>
+    <li><a class="na" data-p="inventory" onclick="sp('inventory')">Inventory</a></li>
+    <li><a class="na" data-p="services" onclick="sp('services')">Services</a></li>
+    <li><a class="na" data-p="about" onclick="sp('about')">About</a></li>
+    <li><a class="na" data-p="contact" onclick="sp('contact')">Contact</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:1rem">
+    <a onclick="sp('wishlist')" class="wb" title="Wishlist">♡<span class="wbn" id="wc">0</span></a>
+    <a onclick="sp('book')" class="btn btn-s btn-sm nc-d">Book a Viewing</a>
+    <button class="hb" onclick="document.getElementById('mm').classList.toggle('open')"><span></span><span></span><span></span></button>
+  </div>
+</div>
+</nav>
+<div id="mm">
+  <button onclick="document.getElementById('mm').classList.remove('open')" style="position:absolute;top:1.5rem;right:1.5rem;background:none;border:none;cursor:pointer;color:var(--text2);font-size:1.5rem">✕</button>
+  <a onclick="sp('home');document.getElementById('mm').classList.remove('open')">Home</a>
+  <a onclick="sp('inventory');document.getElementById('mm').classList.remove('open')">Inventory</a>
+  <a onclick="sp('services');document.getElementById('mm').classList.remove('open')">Services</a>
+  <a onclick="sp('about');document.getElementById('mm').classList.remove('open')">About</a>
+  <a onclick="sp('contact');document.getElementById('mm').classList.remove('open')">Contact</a>
+  <a onclick="sp('book');document.getElementById('mm').classList.remove('open')" style="color:var(--gold)">Book a Viewing →</a>
+</div>
+
+<div id="lb" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.96);z-index:9000;align-items:center;justify-content:center" onclick="closeLB()">
+  <button onclick="event.stopPropagation();navLB(-1)" style="position:absolute;left:1.5rem;color:white;background:none;border:none;font-size:2.5rem;cursor:pointer;z-index:1">‹</button>
+  <img id="lb-img" src="" alt="" style="max-height:85vh;max-width:88vw;object-fit:contain" onclick="event.stopPropagation()"/>
+  <button onclick="event.stopPropagation();navLB(1)" style="position:absolute;right:1.5rem;color:white;background:none;border:none;font-size:2.5rem;cursor:pointer;z-index:1">›</button>
+  <button onclick="closeLB()" style="position:absolute;top:1.5rem;right:1.5rem;color:white;background:none;border:none;font-size:1.5rem;cursor:pointer">✕</button>
+  <p id="lb-c" style="position:absolute;bottom:1.5rem;color:rgba(255,255,255,.45);font-size:.85rem"></p>
+</div>
+
+<div id="del-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:9001;align-items:center;justify-content:center">
+  <div style="background:var(--surface);border:1px solid var(--border);border-radius:3px;padding:2rem;max-width:400px;width:90%;margin:1rem">
+    <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;margin-bottom:.5rem">Delete Vehicle?</h3>
+    <p style="color:var(--text2);font-size:.85rem;margin-bottom:1.5rem">This will permanently delete the car and all its images. This cannot be undone.</p>
+    <div style="display:flex;gap:.8rem">
+      <button class="btn btn-g" onclick="document.getElementById('del-modal').style.display='none'">Cancel</button>
+      <button class="btn" style="background:rgba(239,68,68,.2);border:1px solid rgba(239,68,68,.4);color:#f87171" onclick="document.getElementById('del-modal').style.display='none'">Delete</button>
+    </div>
+  </div>
+</div>
+
+
+<div class="page active" id="page-home">
+<section id="hero">
+  <div style="
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+z-index:1;">
+</div>
+
+  <video src="Hero.mp4" autoplay muted loop playsinline poster="" onerror="this.style.display='none'"></video>
+  <div class="hov-layers">
+    <div style="position:absolute;inset:0;background:rgba(0,0,0,0.4)"></div>
+  </div>
+  <div class="con" style="position:relative;z-index:2;padding-top:72px">
+    <p class="ey" style="animation:fadeUp .6s .3s both;margin-bottom:1.5rem">◆ El-Thawra Street, Heliopolis ◆</p>
+   <h1 id="hero-title" style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(3rem,9vw,8rem);line-height:.92;margin-bottom:1.2rem">Drive The<br> <em style="font-style:italic;color:var(--gold)">Change.</em></h1>
+    <p style="color:var(--text2);font-size:1rem;max-width:480px;line-height:1.7;margin-bottom:2.5rem;animation:fadeUp .5s 1.1s both">Cairo's premier showroom for zero-mile luxury and performance vehicles.</p>
+
+    <div style="display:flex;flex-wrap:wrap;gap:1rem;animation:fadeUp .5s 1.4s both">
+      <a onclick="sp('inventory')" class="btn btn-s btn-lg">Explore Collection</a>
+      <a onclick="sp('book')" class="btn btn-o btn-lg">Book a Viewing →</a>
+    </div>
+  </div>
+  <div style="position:absolute;bottom:2rem;left:5rem;display:flex;flex-direction:column;align-items:center;gap:.5rem;animation:fadeIn .5s 2s both">
+    <div style="width:1px;height:50px;background:linear-gradient(to bottom,var(--gold),transparent);animation:scrollLn 2s 2.5s infinite"></div>
+    <span style="font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--text3)">SCROLL</span>
+  </div>
+  <div style="position:absolute;bottom:2rem;right:5rem;text-align:right;animation:fadeIn .5s 1.8s both">
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:2rem;color:var(--gold)" id="hero-count">40+</p>
+    <p style="font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--text3)">VEHICLES IN STOCK</p>
+  </div>
+</section>
+
+<div class="mq">
+  <div class="mq-t">
+    <span class="mq-i">Mercedes-Benz</span><span class="mq-d">◆</span><span class="mq-i">Porsche</span><span class="mq-d">◆</span><span class="mq-i">BMW</span><span class="mq-d">◆</span><span class="mq-i">Land Rover</span><span class="mq-d">◆</span><span class="mq-i">Cadillac</span><span class="mq-d">◆</span><span class="mq-i">Audi</span><span class="mq-d">◆</span><span class="mq-i">Volvo</span><span class="mq-d">◆</span>
+    <span class="mq-i">Mercedes-Benz</span><span class="mq-d">◆</span><span class="mq-i">Porsche</span><span class="mq-d">◆</span><span class="mq-i">BMW</span><span class="mq-d">◆</span><span class="mq-i">Land Rover</span><span class="mq-d">◆</span><span class="mq-i">Cadillac</span><span class="mq-d">◆</span><span class="mq-i">Audi</span><span class="mq-d">◆</span><span class="mq-i">Volvo</span><span class="mq-d">◆</span>
+  </div>
+</div>
+
+<div style="background:var(--surface);border-bottom:1px solid var(--border)">
+  <div class="con"><div class="sg">
+    <div class="si"><div class="sn" data-cu="40" data-sf="+">0+</div><div class="sl">Vehicles Available</div></div>
+    <div class="si"><div class="sn" data-cu="15" data-sf="">0</div><div class="sl">Years of Trust</div></div>
+    <div class="si"><div class="sn" data-cu="1200" data-sf="+">0+</div><div class="sl">Happy Clients</div></div>
+    <div class="si"><div class="sn" data-cu="5" data-sf="★">0★</div><div class="sl">Rated Service</div></div>
+  </div></div>
+</div>
+
+<section class="sec" style="background:var(--bg)">
+  <div class="con">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3rem" data-r>
+      <div>
+        <p class="ey" style="margin-bottom:.8rem">Handpicked Selection</p>
+        <h2 class="st">Our Featured <em>Collection</em></h2>
+      </div>
+      <a onclick="sp('inventory')" style="color:var(--sapphire-bright);font-size:.78rem;cursor:pointer;text-decoration:none;transition:color .3s;white-space:nowrap" onmouseover="this.style.color='var(--gold-bright)'" onmouseout="this.style.color='var(--sapphire-bright)'">View All →</a>
+    </div>
+    <div style="position:relative" 
+         onmouseenter="document.getElementById('feat-prev').style.opacity='1';document.getElementById('feat-next').style.opacity='1'" 
+         onmouseleave="document.getElementById('feat-prev').style.opacity='0';document.getElementById('feat-next').style.opacity='0'">
+      <button onclick="scrollRow('feat-sr',-1)" style="position:absolute;left:-1.5rem;top:50%;transform:translateY(-50%);z-index:10;width:38px;height:38px;border-radius:50%;border:1px solid var(--border2);background:var(--surface);color:var(--text2);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s;opacity:0" id="feat-prev" onmouseover="this.style.borderColor='var(--gold)';this.style.color='var(--gold)'" onmouseout="this.style.borderColor='var(--border2)';this.style.color='var(--text2)'">‹</button>
+      <div class="sr" id="feat-sr"></div>
+      <button onclick="scrollRow('feat-sr',1)" style="position:absolute;right:-1.5rem;top:50%;transform:translateY(-50%);z-index:10;width:38px;height:38px;border-radius:50%;border:1px solid var(--border2);background:var(--surface);color:var(--text2);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s;opacity:0" id="feat-next" onmouseover="this.style.borderColor='var(--gold)';this.style.color='var(--gold)'" onmouseout="this.style.borderColor='var(--border2)';this.style.color='var(--text2)'">›</button>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:var(--surface);background-image:radial-gradient(circle,rgba(30,58,138,.07) 1px,transparent 1px);background-size:32px 32px">
+  <div class="con">
+    <div style="text-align:center;margin-bottom:4rem" data-r>
+      <p class="ey" style="margin-bottom:.8rem">Why Choose Us</p>
+      <h2 class="st">The Wheels <em>Difference</em></h2>
+    </div>
+<div style="display:grid; grid-template-columns: 1fr 1.2fr; gap: 0; align-items: stretch; background: var(--surface2); border-radius: 4px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.5);">
+  
+  <div class="why-g" style="display:grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; padding: 4rem 3rem;">
+    <div class="why-i" data-r data-d="1" style="text-align:left;">
+      <div class="why-icon">🚗</div><div class="why-n">Latest</div><div class="why-l">Models</div>
+      <div class="why-d">An ever-rotating selection of the world's most coveted automobiles including 2025/2026 releases.</div>
+    </div>
+    <div class="why-i" data-r data-d="2" style="text-align:left;">
+      <div class="why-icon">🛡</div><div class="why-n">Zero</div><div class="why-l">Miles</div>
+      <div class="why-d">Specialists in brand new, zero-mile imported European luxury vehicles.</div>
+    </div>
+    <div class="why-i" data-r data-d="3" style="text-align:left;">
+      <div class="why-icon">🏆</div><div class="why-n">Premium</div><div class="why-l">Service</div>
+      <div class="why-d">A flawless end-to-end buying experience in our Heliopolis showroom.</div>
+    </div>
+    <div class="why-i" data-r data-d="4" style="text-align:left;">
+      <div class="why-icon">✅</div><div class="why-n">100%</div><div class="why-l">Verified</div>
+      <div class="why-d">Every vehicle is authenticated and prepared before delivery.</div>
+    </div>
+  </div>
+
+  <div data-r data-d="2" style="position: relative; min-height: 400px;">
+    <img src="SaveInsta.me_622694661_18011206823821394_6417544349529250736_n.jpg" 
+         style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;" 
+         loading="lazy" 
+         onload="this.classList.add('loaded')" />
+  </div>
+</div></div></section>
+
+<section class="sec" style="background:var(--bg)">
+  <div class="con" style="text-align:center">
+    <p class="ey" style="margin-bottom:.8rem" data-r>Brands We Represent</p>
+    <h2 class="st" style="margin-bottom:3rem" data-r>Marques of <em>Excellence</em></h2>
+    <div class="brands-g" data-r>
+      <span class="bi">Mercedes-Benz</span><span class="bi">Porsche</span><span class="bi">BMW</span><span class="bi">Land Rover</span><span class="bi">Cadillac</span><span class="bi">Audi</span><span class="bi">Volvo</span>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:var(--surface)">
+  <div class="con">
+    <div style="text-align:center;margin-bottom:4rem" data-r>
+      <p class="ey" style="margin-bottom:.8rem">The Process</p>
+      <h2 class="st">From Inquiry to <em>Keys</em></h2>
+    </div>
+    <div class="how-g">
+      <div class="how-i" data-r data-d="1"><span class="how-n">01</span><div class="how-ic">🔍</div><div class="how-t">Browse Collection</div><div class="how-d">Explore our curated inventory of the world's finest automobiles.</div></div>
+      <div class="how-i" data-r data-d="2"><span class="how-n">02</span><div class="how-ic">📞</div><div class="how-t">Book Consultation</div><div class="how-d">Schedule a private viewing with one of our specialists.</div></div>
+      <div class="how-i" data-r data-d="3"><span class="how-n">03</span><div class="how-ic">💰</div><div class="how-t">Arrange Finance</div><div class="how-d">Tailored finance plans from Egypt's leading banks.</div></div>
+      <div class="how-i" data-r data-d="4"><span class="how-n">04</span><div class="how-ic">🚗</div><div class="how-t">Take Delivery</div><div class="how-d">White-glove delivery wherever you are in Egypt.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:var(--bg)">
+  <div class="con">
+    <div style="text-align:center;margin-bottom:3rem" data-r>
+      <p class="ey" style="margin-bottom:.8rem">New to Our Collection</p>
+      <h2 class="st">Just <em>Arrived</em></h2>
+    </div>
+    <div class="cg" id="arrivals-grid"></div>
+  </div>
+</section>
+
+<section class="sec" style="background:var(--surface)">
+  <div class="con">
+    <div style="text-align:center;margin-bottom:2rem" data-r>
+      <p class="ey" style="margin-bottom:.8rem">Inside Wheels Automotive</p>
+      <h2 class="st">Our <em>Showroom</em></h2>
+    </div>
+    <div id="showroom-slider" data-r style="position:relative; width:100%; height:420px; overflow:hidden; border-radius:4px;">
+  
+  <img id="slider-img"
+     src="your-image.jpg"
+     style="width:100%; height:100%; object-fit:contain; background:inherit; transition:opacity .6s ease;">
+
+  <!-- Left Arrow -->
+  <button onclick="prevSlide()" 
+    style="position:absolute; left:15px; top:50%; transform:translateY(-50%);
+           background:rgba(0,0,0,.5); color:white; border:none; 
+           padding:.6rem 1rem; cursor:pointer; font-size:1.5rem;">
+    ‹
+  </button>
+
+  <!-- Right Arrow -->
+  <button onclick="nextSlide()" 
+    style="position:absolute; right:15px; top:50%; transform:translateY(-50%);
+           background:rgba(0,0,0,.5); color:white; border:none; 
+           padding:.6rem 1rem; cursor:pointer; font-size:1.5rem;">
+    ›
+  </button>
+
+</div>
+
+
+
+  </div>
+</section>
+
+<section class="sec" id="test-sec" style="background:var(--bg);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="con">
+    <div style="text-align:center;margin-bottom:3rem" data-r>
+      <p class="ey" style="margin-bottom:.8rem">Client Stories</p>
+      <h2 class="st">What Our <em>Clients Say</em></h2>
+    </div>
+    <div style="max-width:860px;margin:0 auto;position:relative">
+      <div style="position:absolute;top:-3rem;left:-2rem;font-family:'Cormorant Garamond',serif;font-size:150px;line-height:1;color:var(--gold);opacity:.07;pointer-events:none;z-index:0;user-select:none">"</div>
+      <div id="test-wrap">
+        <div class="test-i act"><p class="test-q">"The experience at Wheels Automotive was unlike anything I've encountered in Cairo. Their knowledge of each vehicle is encyclopedic, and the entire process from selection to delivery was seamless and utterly refined."</p><div class="test-a"><img class="test-img" src="https://i.pravatar.cc/80?img=11" alt="" loading="lazy" onload="this.classList.add('loaded')"/><div><p style="font-weight:500;font-size:.9rem">Ahmed Al-Rashidi</p><p style="font-size:.75rem;color:var(--text3)">CEO · Al-Rashidi Holdings</p><p style="color:var(--gold);font-size:.8rem;margin-top:.2rem">★★★★★</p></div></div></div>
+        <div class="test-i"><p class="test-q">"I imported my Mercedes-Benz GLC through Wheels and the entire process was handled with extraordinary professionalism. They know the Egyptian market inside out."</p><div class="test-a"><img class="test-img" src="https://i.pravatar.cc/80?img=5" alt="" loading="lazy" onload="this.classList.add('loaded')"/><div><p style="font-weight:500;font-size:.9rem">Layla Hassan</p><p style="font-size:.75rem;color:var(--text3)">Architect & Developer</p><p style="color:var(--gold);font-size:.8rem;margin-top:.2rem">★★★★★</p></div></div></div>
+        <div class="test-i"><p class="test-q">"Specialized and professional in imported cars. The Porsche Macan they sourced for me is absolute perfection. I will never buy a car from anyone else."</p><div class="test-a"><img class="test-img" src="https://i.pravatar.cc/80?img=15" alt="" loading="lazy" onload="this.classList.add('loaded')"/><div><p style="font-weight:500;font-size:.9rem">Karim El-Sayed</p><p style="font-size:.75rem;color:var(--text3)">Real Estate Investor</p><p style="color:var(--gold);font-size:.8rem;margin-top:.2rem">★★★★★</p></div></div></div>
+        <div class="test-i"><p class="test-q">"Buying my BMW X6 from Wheels was a pleasure from the very first call. Honest, passionate, and truly world-class service. A refreshing experience."</p><div class="test-a"><img class="test-img" src="https://i.pravatar.cc/80?img=8" alt="" loading="lazy" onload="this.classList.add('loaded')"/><div><p style="font-weight:500;font-size:.9rem">Mohamed Farouk</p><p style="font-size:.75rem;color:var(--text3)">Entrepreneur</p><p style="color:var(--gold);font-size:.8rem;margin-top:.2rem">★★★★★</p></div></div></div>
+        <div class="test-i"><p class="test-q">"The concierge delivery to Alexandria was flawless. My car arrived perfectly detailed. Wheels sets a standard that no one else in Egypt comes close to."</p><div class="test-a"><img class="test-img" src="https://i.pravatar.cc/80?img=25" alt="" loading="lazy" onload="this.classList.add('loaded')"/><div><p style="font-weight:500;font-size:.9rem">Sara Al-Masri</p><p style="font-size:.75rem;color:var(--text3)">Interior Designer</p><p style="color:var(--gold);font-size:.8rem;margin-top:.2rem">★★★★★</p></div></div></div>
+      </div>
+      <div style="display:flex;justify-content:center;align-items:center;gap:1rem;margin-top:2.5rem">
+        <button id="tp" onclick="navTest(-1)" style="width:36px;height:36px;border-radius:50%;border:1px solid var(--border2);background:transparent;color:var(--text2);cursor:pointer;transition:all .3s;font-size:1rem" onmouseover="this.style.borderColor='var(--gold)';this.style.color='var(--gold)'" onmouseout="this.style.borderColor='var(--border2)';this.style.color='var(--text2)'">‹</button>
+        <div id="tdots" style="display:flex;gap:.5rem"></div>
+        <button id="tn" onclick="navTest(1)" style="width:36px;height:36px;border-radius:50%;border:1px solid var(--border2);background:transparent;color:var(--text2);cursor:pointer;transition:all .3s;font-size:1rem" onmouseover="this.style.borderColor='var(--gold)';this.style.color='var(--gold)'" onmouseout="this.style.borderColor='var(--border2)';this.style.color='var(--text2)'">›</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="ctab" class="sec">
+  <div class="con" style="text-align:center" data-r="s">
+    <p class="ey" style="margin-bottom:1rem">Private Viewings Available</p>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:300;margin-bottom:1rem">Ready to Experience the <em style="font-style:italic;color:var(--gold)">Extraordinary?</em></h2>
+    <p style="color:var(--text2);font-size:.9rem;margin-bottom:2.5rem;max-width:560px;margin-left:auto;margin-right:auto">Visit our showroom at 46 El-Thawra Street, Heliopolis — or book a private viewing online at your convenience.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:1rem;justify-content:center">
+      <a onclick="sp('inventory')" class="btn btn-s btn-lg">Explore Collection</a>
+      <a onclick="sp('book')" class="btn btn-o btn-lg">Book a Viewing</a>
+    </div>
+  </div>
+</section>
+
+<div style="background:var(--surface);border-top:1px solid var(--border);padding:3rem 0">
+  <div class="con">
+    <div style="display:grid;grid-template-columns:60fr 40fr;gap:3rem;align-items:center">
+      <div data-r>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;margin-bottom:.5rem">Stay Ahead of Every <em style="font-style:italic;color:var(--gold)">Arrival</em></h3>
+        <p style="color:var(--text3);font-size:.85rem">Be the first to know when exceptional vehicles arrive in our collection.</p>
+      </div>
+      <div style="display:flex;gap:0" data-r data-d="2">
+        <input type="email" placeholder="Your email address" class="form-inp" style="border-radius:3px 0 0 3px;border-right:none"/>
+        <button class="btn btn-r" style="border-radius:0 3px 3px 0;white-space:nowrap">Subscribe →</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div><div class="page" id="page-inventory">
+<div style="min-height:100vh;padding-top:5rem;padding-bottom:4rem">
+<div class="con">
+  <div data-r style="margin-bottom:2.5rem">
+    <p class="ey" style="margin-bottom:.6rem">Our Collection</p>
+    <h1 class="st">The <em>Inventory</em></h1>
+  </div>
+  <div class="inv-lay">
+    <aside class="fsb">
+      <div class="fsh">REFINE SEARCH <a style="font-size:.7rem;color:var(--text3);cursor:pointer;text-decoration:none" onmouseover="this.style.color='var(--sapphire-bright)'" onmouseout="this.style.color='var(--text3)'">Clear All</a></div>
+      <div class="fsg">
+        <span class="fsg-t">Brand</span>
+        <label class="fck"><input type="checkbox" style="accent-color:var(--sapphire-bright)"/><span>Mercedes-Benz <span style="color:var(--text3)">(3)</span></span></label>
+        <label class="fck"><input type="checkbox" style="accent-color:var(--sapphire-bright)"/><span>Porsche <span style="color:var(--text3)">(2)</span></span></label>
+        <label class="fck"><input type="checkbox" style="accent-color:var(--sapphire-bright)"/><span>BMW <span style="color:var(--text3)">(1)</span></span></label>
+        <label class="fck"><input type="checkbox" style="accent-color:var(--sapphire-bright)"/><span>Land Rover <span style="color:var(--text3)">(1)</span></span></label>
+        <label class="fck"><input type="checkbox" style="accent-color:var(--sapphire-bright)"/><span>Cadillac <span style="color:var(--text3)">(1)</span></span></label>
+      </div>
+      <div class="fsg">
+        <span class="fsg-t">Body Type</span>
+        <div class="pill-g">
+          <span class="pill">Sedan</span><span class="pill on">SUV</span><span class="pill">Coupe</span><span class="pill">Convertible</span>
+        </div>
+      </div>
+      <div class="fsg">
+        <span class="fsg-t">Condition</span>
+        <label class="fck"><input type="radio" name="cond" checked style="accent-color:var(--sapphire-bright)"/><span>All</span></label>
+        <label class="fck"><input type="radio" name="cond" style="accent-color:var(--sapphire-bright)"/><span>New</span></label>
+        <label class="fck"><input type="radio" name="cond" style="accent-color:var(--sapphire-bright)"/><span>Pre-Owned</span></label>
+      </div>
+      <div class="fsg">
+        <span class="fsg-t">Year Range</span>
+        <input type="range" min="2020" max="2026" value="2024" style="width:100%;accent-color:var(--sapphire-bright);margin-bottom:.4rem"/>
+        <div style="display:flex;justify-content:space-between;font-size:.68rem;color:var(--text3)"><span>2020</span><span>2026</span></div>
+      </div>
+      <div class="fsg">
+        <span class="fsg-t">Fuel Type</span>
+        <label class="fck"><input type="checkbox" style="accent-color:var(--sapphire-bright)"/><span>Petrol</span></label>
+        <label class="fck"><input type="checkbox" style="accent-color:var(--sapphire-bright)"/><span>Hybrid</span></label>
+        <label class="fck"><input type="checkbox" style="accent-color:var(--sapphire-bright)"/><span>Electric</span></label>
+      </div>
+      <button class="btn btn-s btn-w">Apply Filters</button>
+    </aside>
+    <div>
+      <div class="sortbar">
+        <p style="font-size:.78rem;color:var(--text3)">Showing <span style="color:var(--text)">8</span> of <span style="color:var(--text)">8</span> vehicles</p>
+        <select class="form-sel" style="width:auto;padding:.5rem .8rem">
+          <option>Newest Listed</option><option>Price: Low to High</option><option>Price: High to Low</option><option>Year: Newest First</option>
+        </select>
+      </div>
+      <div class="cg" id="inv-grid"></div>
+    </div>
+  </div>
+</div>
+<div class="mob-filter-bar">
+  <button class="btn btn-g btn-sm">⚙ Filters (1 active)</button>
+  <button class="btn btn-g btn-sm">Sort ▾</button>
+</div>
+</div>
+</div>
+
+<div class="page" id="page-detail">
+<div style="padding-top:72px">
+  <div style="position:relative;height:65vh;background:var(--surface2);overflow:hidden">
+    <img id="gm"
+     src="SaveInsta.me_590888426_18006695387821394_7306171190637413061_n.jpg"
+     alt="Mercedes-Benz GLC 300"
+     style="width:100%; height:100%; object-fit:contain; cursor:zoom-in; background:#0f0f0f;"
+     onclick="openLB(0)"
+     loading="lazy"
+     onload="this.classList.add('loaded')"
+     class="loaded">
+
+    <div style="position:absolute;bottom:1rem;right:1.5rem;display:flex;gap:.6rem">
+      <button onclick="openLB(0)" style="background:rgba(8,8,8,.75);border:1px solid var(--border2);color:white;padding:.5rem 1rem;border-radius:3px;font-size:.75rem;cursor:pointer;transition:all .3s;font-family:'DM Sans',sans-serif" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--border2)'">📷 4 Photos</button>
+    </div>
+  </div>
+  <div class="gth-s">
+    <img class="gth act" src="SaveInsta.me_599050988_18006695342821394_3797459272157109471_n.jpg" alt="" onclick="switchG(this,'SaveInsta.me_599050988_18006695342821394_3797459272157109471_n.jpg')" loading="lazy" onload="this.classList.add('loaded')"/>
+    <img class="gth act" src="SaveInsta.me_590888426_18006695387821394_7306171190637413061_n.jpg" alt="" onclick="switchG(this,'SaveInsta.me_590888426_18006695387821394_7306171190637413061_n.jpg')" loading="lazy" onload="this.classList.add('loaded')"/>
+    <img class="gth act" src="SaveInsta.me_589907989_18006695360821394_5036669771278930665_n.jpg" alt="" onclick="switchG(this,'SaveInsta.me_589907989_18006695360821394_5036669771278930665_n.jpg')" loading="lazy" onload="this.classList.add('loaded')"/>
+    <img class="gth act" src="SaveInsta.me_587766262_18006695309821394_3027646711437904788_n.jpg" alt="" onclick="switchG(this,'SaveInsta.me_587766262_18006695309821394_3027646711437904788_n.jpg')" loading="lazy" onload="this.classList.add('loaded')"/>  
+    <img class="gth act" src="SaveInsta.me_587538018_18006695375821394_3193867463868193447_n.jpg" alt="" onclick="switchG(this,'SaveInsta.me_587538018_18006695375821394_3193867463868193447_n.jpg')" loading="lazy" onload="this.classList.add('loaded')"/>
+    <img class="gth act" src="SaveInsta.me_587520600_18006695363821394_4885835504380588045_n.jpg" alt="" onclick="switchG(this,'SaveInsta.me_587520600_18006695363821394_4885835504380588045_n.jpg')" loading="lazy" onload="this.classList.add('loaded')"/>
+    <img class="gth act" src="SaveInsta.me_587510901_18006695339821394_6906373387723071844_n.jpg" alt="" onclick="switchG(this,'SaveInsta.me_587510901_18006695339821394_6906373387723071844_n.jpg')" loading="lazy" onload="this.classList.add('loaded')"/>
+    <img class="gth act" src="SaveInsta.me_587288740_18006695300821394_8433441324118045845_n.jpg" alt="" onclick="switchG(this,'SaveInsta.me_587288740_18006695300821394_8433441324118045845_n.jpg')" loading="lazy" onload="this.classList.add('loaded')"/>
+    <img class="gth act" src="SaveInsta.me_587277867_18006695318821394_3024090056542253209_n.jpg" alt="" onclick="switchG(this,'SaveInsta.me_587277867_18006695318821394_3024090056542253209_n.jpg')" loading="lazy" onload="this.classList.add('loaded')"/>
+  </div>
+</div>
+<div class="con" style="padding-top:1.5rem;padding-bottom:0">
+  <p style="font-size:.75rem;color:var(--text3)">
+    <a onclick="sp('home')" style="cursor:pointer;transition:color .3s" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--text3)'">Home</a>
+    <span style="color:var(--gold);margin:0 .5rem">›</span>
+    <a onclick="sp('inventory')" style="cursor:pointer;transition:color .3s" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--text3)'">Inventory</a>
+    <span style="color:var(--gold);margin:0 .5rem">›</span>
+    Mercedes-Benz GLC 300 2026
+  </p>
+</div>
+<div class="con" style="padding-top:2.5rem;padding-bottom:5rem">
+  <div class="det-lay">
+    <div>
+      <p class="ey" style="margin-bottom:.4rem">Mercedes-Benz</p>
+      <h1 style="font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:600;margin-bottom:.5rem">GLC 300 Coupe</h1>
+      <p style="color:var(--text3);font-size:.85rem;margin-bottom:2rem">2026 · New · Zero-Mile · Obsidian Black</p>
+      <div class="acc-i open" onclick="toggleAcc(this)">
+        <div class="acc-h"><span style="font-size:.85rem;font-weight:500">🔧 Engine & Performance</span><span class="acc-ch">▾</span></div>
+        <div class="acc-b" style="max-height:500px">
+          <div class="sr-row"><span class="sr-k">Engine</span><span>2.0L Turbo Inline-4</span></div>
+          <div class="sr-row"><span class="sr-k">Horsepower</span><span>258 hp</span></div>
+          <div class="sr-row"><span class="sr-k">0–100 km/h</span><span>6.2 seconds</span></div>
+          <div class="sr-row"><span class="sr-k">Top Speed</span><span>240 km/h</span></div>
+          <div class="sr-row"><span class="sr-k">Transmission</span><span>9G-TRONIC Automatic</span></div>
+          <div class="sr-row"><span class="sr-k">Drivetrain</span><span>4MATIC AWD</span></div>
+        </div>
+      </div>
+      <div class="acc-i" onclick="toggleAcc(this)">
+        <div class="acc-h"><span style="font-size:.85rem;font-weight:500">🎨 Exterior & Body</span><span class="acc-ch">▾</span></div>
+        <div class="acc-b">
+          <div class="sr-row"><span class="sr-k">Exterior Colour</span><span>Obsidian Black</span></div>
+          <div class="sr-row"><span class="sr-k">Body Type</span><span>SUV Coupe</span></div>
+          <div class="sr-row"><span class="sr-k">Wheel Size</span><span>20 inch AMG Light-Alloy</span></div>
+          <div class="sr-row"><span class="sr-k">Roof Type</span><span>Panoramic Sliding Sunroof</span></div>
+        </div>
+      </div>
+      <div class="acc-i" onclick="toggleAcc(this)">
+        <div class="acc-h"><span style="font-size:.85rem;font-weight:500">🛋 Interior & Comfort</span><span class="acc-ch">▾</span></div>
+        <div class="acc-b">
+          <div class="sr-row"><span class="sr-k">Interior Colour</span><span>Saddle Brown Leather</span></div>
+          <div class="sr-row"><span class="sr-k">Upholstery</span><span>Leather</span></div>
+          <div class="sr-row"><span class="sr-k">Seats</span><span>5</span></div>
+          <div class="sr-row"><span class="sr-k">Infotainment</span><span>MBUX Gen 2</span></div>
+          <div style="padding:1rem 1.1rem">
+            <span class="tag">Burmester Sound</span><span class="tag">Ambient Lighting</span><span class="tag">Heated Seats</span><span class="tag">AMG Line Interior</span>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:2rem;padding:1.5rem;background:var(--surface);border:1px solid var(--border);border-radius:3px">
+        <p class="ey" style="margin-bottom:.8rem">About this Vehicle</p>
+        <p style="color:var(--text2);font-size:.88rem;line-height:1.9">The Mercedes-Benz GLC Coupe blends the sportiness of a coupe with the functionality of an SUV. With its bold AMG styling and state-of-the-art MBUX infotainment, it offers an engaging and luxurious driving experience perfect for the streets of Cairo.</p>
+        <p style="color:var(--text2);font-size:.88rem;line-height:1.9;margin-top:1rem">This Obsidian Black example is brand new, zero-mile, and available for immediate delivery from our El-Thawra showroom.</p>
+      </div>
+    </div>
+    <aside class="dsb">
+      <p class="ey" style="margin-bottom:.3rem">Mercedes-Benz</p>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:600;margin-bottom:.3rem">GLC 300 Coupe</h2>
+      <p style="color:var(--text3);font-size:.8rem;margin-bottom:1.2rem">2026 · New · Zero-Mile</p>
+      <div class="hl-g">
+        <div class="hl-i"><div class="hl-v">2.0L Turbo</div><div class="hl-k">Engine</div></div>
+        <div class="hl-i"><div class="hl-v">240 km/h</div><div class="hl-k">Top Speed</div></div>
+        <div class="hl-i"><div class="hl-v">6.2s</div><div class="hl-k">0–100</div></div>
+        <div class="hl-i"><div class="hl-v">5 Seats</div><div class="hl-k">Capacity</div></div>
+      </div>
+      <div style="margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid var(--border)">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-style:italic;color:var(--gold-bright)">£E 6,300,000</div>
+        <p style="font-size:.75rem;color:var(--text3);margin-top:.2rem">Finance from approx. £E 63,000/month</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:.6rem;margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid var(--border)">
+        <a onclick="sp('book')" class="btn btn-s btn-w">Book a Test Drive</a>
+        <button class="btn btn-o btn-w">Make an Offer</button>
+        <button class="btn btn-g btn-w" id="wl-det-btn" onclick="toggleWLDet()">♡ Save to Wishlist</button>
+      </div>
+      <p class="ey" style="margin-bottom:1rem;font-size:.6rem">Finance Estimate</p>
+      <div style="margin-bottom:.8rem">
+        <div style="display:flex;justify-content:space-between;margin-bottom:.4rem"><span style="font-size:.7rem;color:var(--text3)">Down payment</span><span style="font-size:.72rem;color:var(--text)" id="dp-lbl">20% · £E 1,260,000</span></div>
+        <input type="range" min="10" max="50" value="20" style="width:100%;accent-color:var(--sapphire-bright)" oninput="updateFC(this.value)"/>
+      </div>
+      <div style="margin-bottom:.8rem">
+        <p style="font-size:.7rem;color:var(--text3);margin-bottom:.4rem">Term (months)</p>
+        <div style="display:flex;gap:.4rem">
+          <button onclick="setTerm(24,this)" class="btn btn-g btn-sm" style="flex:1;padding:.4rem 0">24</button>
+          <button onclick="setTerm(36,this)" class="btn btn-g btn-sm" style="flex:1;padding:.4rem 0">36</button>
+          <button onclick="setTerm(48,this)" class="btn btn-s btn-sm" style="flex:1;padding:.4rem 0" id="term-active">48</button>
+          <button onclick="setTerm(60,this)" class="btn btn-g btn-sm" style="flex:1;padding:.4rem 0">60</button>
+        </div>
+      </div>
+      <div class="fc-o">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-style:italic;color:var(--gold-bright)" id="fc-out">£E 97,173 / mo</div>
+        <p style="font-size:.6rem;color:var(--text3);margin-top:.3rem">Indicative only — contact us for official rates</p>
+      </div>
+      <div style="margin-top:1.2rem;padding-top:1.2rem;border-top:1px solid var(--border);display:flex;gap:.6rem">
+        <a href="https://wa.me/201095450210" target="_blank" class="btn btn-g btn-sm" style="flex:1;background:rgba(37,211,102,.08);border-color:rgba(37,211,102,.3);color:#4ade80">WhatsApp</a>
+        <button class="btn btn-g btn-sm" style="flex:1" onclick="copyLink()">Copy Link</button>
+      </div>
+      <a href="tel:+201095450210" style="display:flex;align-items:center;justify-content:center;gap:.5rem;margin-top:.8rem;color:var(--text3);text-decoration:none;font-size:.78rem;transition:color .3s" onmouseover="this.style.color='var(--sapphire-bright)'" onmouseout="this.style.color='var(--text3)'">📞 +20 10 9545 0210</a>
+    </aside>
+  </div>
+  <div style="margin-top:4rem">
+    <p class="ey" style="margin-bottom:.8rem" data-r>You May Also Like</p>
+    <h2 class="st" style="margin-bottom:2rem" data-r>Similar <em>Vehicles</em></h2>
+    <div class="sr" id="sim-row"></div>
+  </div>
+</div>
+</div><div class="page" id="page-book">
+<div style="min-height:100vh;padding:7rem 0 4rem">
+<div class="con">
+  <div class="book-lay">
+    <div style="position:sticky;top:88px">
+      <p class="ey" style="margin-bottom:.8rem">Reserve Your Experience</p>
+      <h1 style="font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:300;line-height:1.1;margin-bottom:1.5rem">Book a Private<br><em style="font-style:italic;color:var(--gold)">Test Drive</em></h1>
+      <p style="color:var(--text2);font-size:.9rem;line-height:1.9;margin-bottom:2rem">Schedule an exclusive, unhurried experience at our Heliopolis showroom or arrange a private viewing at your preferred location.</p>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:.9rem;margin-bottom:2rem">
+        <li style="display:flex;align-items:flex-start;gap:.8rem;font-size:.83rem;color:var(--text2)"><span style="color:var(--gold);font-size:.5rem;margin-top:.5rem">◆</span>Private appointment with a dedicated specialist</li>
+        <li style="display:flex;align-items:flex-start;gap:.8rem;font-size:.83rem;color:var(--text2)"><span style="color:var(--gold);font-size:.5rem;margin-top:.5rem">◆</span>Extended test drives for serious buyers</li>
+        <li style="display:flex;align-items:flex-start;gap:.8rem;font-size:.83rem;color:var(--text2)"><span style="color:var(--gold);font-size:.5rem;margin-top:.5rem">◆</span>Same-day confirmation via WhatsApp</li>
+        <li style="display:flex;align-items:flex-start;gap:.8rem;font-size:.83rem;color:var(--text2)"><span style="color:var(--gold);font-size:.5rem;margin-top:.5rem">◆</span>Complimentary refreshments during your visit</li>
+      </ul>
+      <div id="open-bd" style="display:inline-flex"></div>
+    </div>
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:3px;padding:2rem">
+      <div class="sdots" id="sdots">
+        <div class="sdot act" data-s="1">1</div><div class="sln"></div>
+        <div class="sdot" data-s="2">2</div><div class="sln"></div>
+        <div class="sdot" data-s="3">3</div><div class="sln"></div>
+        <div class="sdot" data-s="4">4</div>
+      </div>
+      <div class="bstep act" id="bs1">
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:300;margin-bottom:.4rem">Select Vehicle</h3>
+        <p style="color:var(--text3);font-size:.82rem;margin-bottom:1.2rem">Which car would you like to experience?</p>
+        <input type="text" class="form-inp" placeholder="Search by brand or model…" style="margin-bottom:.8rem"/>
+        <div style="display:flex;flex-direction:column;gap:.5rem;max-height:260px;overflow-y:auto">
+          <div style="display:flex;align-items:center;gap:1rem;padding:.8rem;border:2px solid var(--sapphire-bright);border-radius:3px;background:rgba(30,58,138,.1);cursor:pointer">
+            <img src="SaveInsta.me_599050988_18006695342821394_3797459272157109471_n.jpg" alt="" style="width:70px;height:46px;object-fit:cover;border-radius:2px" loading="lazy" onload="this.classList.add('loaded')"/>
+            <div><p style="font-size:.88rem;font-weight:500">Mercedes GLC 300</p><p style="font-size:.73rem;color:var(--text3)">2026 · New</p></div>
+            <span style="margin-left:auto;color:var(--sapphire-bright)">✓</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:1rem;padding:.8rem;border:1px solid var(--border);border-radius:3px;cursor:pointer;transition:border-color .2s" onmouseover="this.style.borderColor='var(--border2)'" onmouseout="this.style.borderColor='var(--border)'">
+            <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?w=120&q=80" alt="" style="width:70px;height:46px;object-fit:cover;border-radius:2px" loading="lazy" onload="this.classList.add('loaded')"/>
+            <div><p style="font-size:.88rem;font-weight:500">Cadillac Escalade</p><p style="font-size:.73rem;color:var(--text3)">2024 · New</p></div>
+          </div>
+        </div>
+        <button onclick="goStep(2)" class="btn btn-s btn-w" style="margin-top:1.5rem">Next: Choose Date →</button>
+      </div>
+      <div class="bstep" id="bs2">
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:300;margin-bottom:.4rem">Date & Time</h3>
+        <p style="color:var(--text3);font-size:.82rem;margin-bottom:1.2rem">Select your preferred appointment slot.</p>
+        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:3px;padding:1rem;margin-bottom:.8rem">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.8rem">
+            <button style="background:none;border:none;cursor:pointer;color:var(--text3);font-size:1rem" onmouseover="this.style.color='var(--sapphire-bright)'" onmouseout="this.style.color='var(--text3)'">‹</button>
+            <span style="font-size:.85rem;font-weight:500" id="cal-month">December 2024</span>
+            <button style="background:none;border:none;cursor:pointer;color:var(--text3);font-size:1rem" onmouseover="this.style.color='var(--sapphire-bright)'" onmouseout="this.style.color='var(--text3)'">›</button>
+          </div>
+          <div class="cal-g" id="cal-grid"></div>
+        </div>
+        <p style="font-size:.7rem;color:var(--text3);text-transform:uppercase;letter-spacing:.15em;margin-bottom:.5rem">Available Times</p>
+        <div class="ts-g">
+          <button class="ts">11:00 AM</button><button class="ts">1:00 PM</button>
+          <button class="ts sel">3:00 PM</button><button class="ts">5:00 PM</button>
+          <button class="ts">7:00 PM</button><button class="ts">9:00 PM</button>
+        </div>
+        <div style="display:flex;gap:.8rem;margin-top:1.5rem">
+          <button onclick="goStep(1)" class="btn btn-g btn-sm">← Back</button>
+          <button onclick="goStep(3)" class="btn btn-s" style="flex:1">Next: Your Details →</button>
+        </div>
+      </div>
+      <div class="bstep" id="bs3">
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:300;margin-bottom:.4rem">Your Details</h3>
+        <p style="color:var(--text3);font-size:.82rem;margin-bottom:1.5rem">We'll use these to confirm your appointment.</p>
+        <div style="display:flex;flex-direction:column;gap:1rem">
+          <div class="form-group"><label class="fl">Full Name *</label><input type="text" class="form-inp" placeholder="Ahmed Al-Rashidi"/></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:.8rem">
+            <div class="form-group"><label class="fl">Phone *</label><input type="tel" class="form-inp" placeholder="+20 10 ···"/></div>
+            <div class="form-group"><label class="fl">Email *</label><input type="email" class="form-inp" placeholder="email@example.com"/></div>
+          </div>
+          <div class="form-group"><label class="fl">License # (optional)</label><input type="text" class="form-inp" placeholder="Egyptian driving license"/></div>
+          <div class="form-group"><label class="fl">Special Requests</label><textarea class="form-ta" rows="3" placeholder="Any special requirements or preferences…" style="min-height:80px"></textarea></div>
+          <div>
+            <p class="fl" style="margin-bottom:.5rem">Preferred Contact Method</p>
+            <div style="display:flex;gap:.5rem">
+              <label style="flex:1;cursor:pointer"><input type="radio" name="cm" style="display:none" checked/><div style="border:1px solid var(--sapphire-bright);border-radius:3px;padding:.5rem;text-align:center;font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:var(--sapphire-bright);background:rgba(30,58,138,.1)">Phone</div></label>
+              <label style="flex:1;cursor:pointer"><input type="radio" name="cm" style="display:none"/><div style="border:1px solid var(--border);border-radius:3px;padding:.5rem;text-align:center;font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text3)">WhatsApp</div></label>
+              <label style="flex:1;cursor:pointer"><input type="radio" name="cm" style="display:none"/><div style="border:1px solid var(--border);border-radius:3px;padding:.5rem;text-align:center;font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text3)">Email</div></label>
+            </div>
+          </div>
+        </div>
+        <div style="display:flex;gap:.8rem;margin-top:1.5rem">
+          <button onclick="goStep(2)" class="btn btn-g btn-sm">← Back</button>
+          <button onclick="goStep(4)" class="btn btn-s" style="flex:1">Review Booking →</button>
+        </div>
+      </div>
+      <div class="bstep" id="bs4">
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:300;margin-bottom:.4rem">Confirm Booking</h3>
+        <p style="color:var(--text3);font-size:.82rem;margin-bottom:1.5rem">Review your appointment details below.</p>
+        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:3px;overflow:hidden;margin-bottom:1.5rem">
+          <div class="sr-row"><span class="sr-k">Vehicle</span><span>Mercedes GLC 300 2026</span></div>
+          <div class="sr-row"><span class="sr-k">Date</span><span>December 20, 2024</span></div>
+          <div class="sr-row"><span class="sr-k">Time</span><span>3:00 PM</span></div>
+          <div class="sr-row"><span class="sr-k">Name</span><span>Ahmed Al-Rashidi</span></div>
+          <div class="sr-row"><span class="sr-k">Phone</span><span>+20 10 1234 5678</span></div>
+          <div class="sr-row" style="border:none"><span class="sr-k">Contact via</span><span>Phone</span></div>
+        </div>
+        <div style="display:flex;gap:.8rem">
+          <button onclick="goStep(3)" class="btn btn-g btn-sm">← Back</button>
+          <button onclick="confirmBook()" class="btn btn-s" style="flex:1" id="confirm-btn">Confirm Booking ✓</button>
+        </div>
+      </div>
+      <div class="bstep" id="bs5" style="text-align:center;padding:2rem 0">
+        <div style="width:60px;height:60px;border-radius:50%;background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.3);display:flex;align-items:center;justify-content:center;color:#4ade80;font-size:1.5rem;margin:0 auto 1.5rem">✓</div>
+        <p class="ey" style="margin-bottom:.8rem">Booking Confirmed</p>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;margin-bottom:.5rem">Thank You!</h3>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-style:italic;color:var(--gold);margin-bottom:1.5rem">WHL-K3X9P2</div>
+        <p style="color:var(--text2);font-size:.85rem;margin-bottom:2rem">We'll contact you within 2 hours to confirm your appointment. Check your email for details.</p>
+        <div style="display:flex;flex-direction:column;gap:.8rem">
+          <a href="https://wa.me/201095450210" target="_blank" class="btn btn-w" style="background:#25D366;color:white;border:none">💬 WhatsApp Confirmation</a>
+          <button onclick="sp('home')" class="btn btn-g btn-w">Back to Home</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div><div class="page" id="page-services">
+<div style="min-height:100vh;padding:7rem 0 4rem">
+<div class="con">
+  <div style="text-align:center;max-width:640px;margin:0 auto 5rem" data-r>
+    <p class="ey" style="margin-bottom:.8rem">What We Offer</p>
+    <h1 class="st">Our <em>Services</em></h1>
+    <p style="color:var(--text3);font-size:.9rem;margin-top:1rem;line-height:1.8">Every aspect of your luxury car journey, handled with meticulous care and white-glove attention to detail.</p>
+  </div>
+  <div class="sv-g">
+    <div class="sv-c" data-r data-d="1">
+      <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=600&q=80" alt="Vehicle Import" style="width:calc(100% + 3.6rem);height:160px;object-fit:cover;margin:-2rem -1.8rem 1.5rem;display:block" loading="lazy" onload="this.classList.add('loaded')"/>
+      <h3 class="sv-n">Vehicle Import & Sourcing</h3>
+      <p class="sv-d">Direct access to factory-spec vehicles from global certified dealers. Every car arrives with full provenance documentation and international warranty.</p>
+    </div>
+    <div class="sv-c" data-r data-d="2">
+      <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=600&q=80" alt="Car Financing" style="width:calc(100% + 3.6rem);height:160px;object-fit:cover;margin:-2rem -1.8rem 1.5rem;display:block" loading="lazy" onload="this.classList.add('loaded')"/>
+      <h3 class="sv-n">Flexible Car Financing</h3>
+      <p class="sv-d">Tailored finance plans with Egypt's leading banks. We navigate the paperwork so you can focus entirely on the pleasure of your new vehicle.</p>
+    </div>
+    <div class="sv-c" data-r data-d="3">
+      <img src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?w=600&q=80" alt="Trade-In" style="width:calc(100% + 3.6rem);height:160px;object-fit:cover;margin:-2rem -1.8rem 1.5rem;display:block" loading="lazy" onload="this.classList.add('loaded')"/>
+      <h3 class="sv-n">Trade-In & Valuation</h3>
+      <p class="sv-d">Fair market valuation within 24 hours. Our experts ensure you receive maximum value to apply toward your next acquisition.</p>
+    </div>
+    <div class="sv-c" data-r data-d="1">
+      <img src="What-Is-an-Extended-Car-Warranty-And-What-Does-It-Cover.jpg" alt="Extended Warranty" style="width:calc(100% + 3.6rem);height:160px;object-fit:cover;margin:-2rem -1.8rem 1.5rem;display:block" loading="lazy" onload="this.classList.add('loaded')"/>
+      <h3 class="sv-n">Extended Warranty</h3>
+      <p class="sv-d">Up to 3 years comprehensive coverage beyond manufacturer warranty for complete peace of mind on every journey.</p>
+    </div>
+    <div class="sv-c" data-r data-d="2">
+      <img src="6cfe92146221467.62ac4a3fa29bb.jpg" alt="Concierge Delivery" style="width:calc(100% + 3.6rem);height:160px;object-fit:cover;margin:-2rem -1.8rem 1.5rem;display:block" loading="lazy" onload="this.classList.add('loaded')"/>
+      <h3 class="sv-n">Concierge Delivery</h3>
+      <p class="sv-d">White-glove door-to-door delivery anywhere in Egypt, fully detailed and prepared, with a complete handover at your location.</p>
+    </div>
+    <div class="sv-c" data-r data-d="3">
+      <img src="185E3ADD2A812.webp" alt="Bespoke Customisation" style="width:calc(100% + 3.6rem);height:160px;object-fit:cover;margin:-2rem -1.8rem 1.5rem;display:block" loading="lazy" onload="this.classList.add('loaded')"/>
+      <h3 class="sv-n">Bespoke Customisation</h3>
+      <p class="sv-d">Factory options, full wraps, interior trims, and paint-to-sample finishes designed uniquely and entirely around you.</p>
+    </div>
+  </div>
+  <div style="margin-top:6rem;padding:5rem;background:var(--surface);border:1px solid var(--border);border-radius:3px">
+    <div style="text-align:center;margin-bottom:4rem" data-r>
+      <p class="ey" style="margin-bottom:.8rem">How It Works</p>
+      <h2 class="st">From Inquiry to <em>Keys</em></h2>
+    </div>
+    <div class="how-g">
+      <div class="how-i" data-r data-d="1"><span class="how-n">01</span><div class="how-ic">🔍</div><div class="how-t">Browse & Select</div><div class="how-d">Explore our curated collection online or visit our showroom in Heliopolis.</div></div>
+      <div class="how-i" data-r data-d="2"><span class="how-n">02</span><div class="how-ic">🤝</div><div class="how-t">Consult a Specialist</div><div class="how-d">Book a private viewing. Our team ensures every question is answered.</div></div>
+      <div class="how-i" data-r data-d="3"><span class="how-n">03</span><div class="how-ic">📋</div><div class="how-t">Arrange Finance</div><div class="how-d">We handle all paperwork with our banking partners for a seamless experience.</div></div>
+      <div class="how-i" data-r data-d="4"><span class="how-n">04</span><div class="how-ic">🚗</div><div class="how-t">Take Delivery</div><div class="how-d">Your vehicle arrives perfectly prepared, wherever you are in Egypt.</div></div>
+    </div>
+  </div>
+  <div id="ctab" class="sec" style="margin-top:4rem;border-radius:3px;padding:5rem 3rem;text-align:center" data-r="s">
+    <p class="ey" style="margin-bottom:1rem;color:rgba(255,255,255,0.7)">Ready to Begin?</p>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:300;margin-bottom:1rem">Start Your Journey <em style="font-style:italic;color:var(--gold)">Today</em></h2>
+    <p style="color:var(--text2);font-size:.88rem;margin-bottom:2rem">Speak to one of our specialists or book your private viewing online.</p>
+    <a onclick="sp('book')" class="btn btn-r btn-lg">Book a Viewing</a>
+  </div>
+</div>
+</div>
+</div><div class="page" id="page-about">
+<div style="min-height:100vh">
+  <div style="height:50vh;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center">
+    <img src="https://images.unsplash.com/photo-1567818735868-e71b99932e29?w=1400&q=80" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.3" loading="lazy" onload="this.classList.add('loaded')"/>
+    <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(8,8,8,.4),rgba(8,8,8,.7))"></div>
+    <div style="position:relative;text-align:center;z-index:1;padding-top:72px">
+      <p class="ey" style="margin-bottom:.8rem">Our Story</p>
+      <h1 style="font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,6vw,4.5rem);font-weight:300;color:white">The Wheels Automotive <em style="font-style:italic;color:var(--gold)">Legacy</em></h1>
+    </div>
+  </div>
+  <div style="padding:5rem 0">
+    <div class="con" style="margin-bottom:5rem">
+      <div style="max-width:720px;margin:0 auto;text-align:center;margin-bottom:3rem" data-r>
+        <p style="font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-style:italic;font-weight:300;line-height:1.5;color:var(--text)">"Founded on a belief that Cairo deserves the same automotive experiences as London, Dubai, and Geneva."</p>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem" data-r>
+        <div>
+          <img src="1-continental-gt.avif" style="width:100%;height:200px;object-fit:cover;border-radius:3px;margin-bottom:1.5rem;" loading="lazy" onload="this.classList.add('loaded')"/>
+          <p style="color:var(--text2);font-size:.9rem;line-height:2">Wheels Automotive was born from a single conviction: that Cairo's most discerning automotive enthusiasts deserve the same access to the world's finest automobiles as clients in any global capital. Operating on El-Thawra Street in Heliopolis, we specialize in high-end, zero-mile European imports.</p>
+          <p style="color:var(--text2);font-size:.9rem;line-height:2;margin-top:1rem">Our approach has always been personal. Every client is treated as an individual, not a transaction. Every vehicle is verified, authenticated, and prepared to the highest standard before it ever reaches our showroom floor.</p>
+        </div>
+        <div>
+          <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=800&q=80" style="width:100%;height:200px;object-fit:cover;border-radius:3px;margin-bottom:1.5rem;" loading="lazy" onload="this.classList.add('loaded')"/>
+          <p style="color:var(--text2);font-size:.9rem;line-height:2">Over the years, Wheels Automotive has grown into Cairo's most trusted destination for luxury automotive acquisition — not through advertising, but through the loyalty of clients who return, and the introductions of those who refer.</p>
+          <p style="color:var(--text2);font-size:.9rem;line-height:2;margin-top:1rem">Today, with thousands of satisfied clients and a presence spanning Cairo, Alexandria, and beyond, we remain committed to the same principle that defined us from the beginning: exceptional automobiles, delivered with exceptional care.</p>
+        </div>
+      </div>
+    </div>
+    <div class="con" style="margin-bottom:5rem">
+      <div style="text-align:center;margin-bottom:4rem" data-r>
+        <p class="ey" style="margin-bottom:.8rem">Our Journey</p>
+        <h2 class="st">A <em>Timeline</em> of Excellence</h2>
+      </div>
+      <div class="tl">
+        <div class="tl-i"><div class="tl-y" data-r="l">Start</div><div class="tl-c" data-r="r"><h4>Founded in Heliopolis</h4><p>Wheels Automotive opens its doors on El-Thawra Street with a vision to bring authentic European luxury to Cairo's automotive market.</p></div></div>
+        <div class="tl-i"><div class="tl-c" data-r="l"><h4>Official Import Partnerships</h4><p>Establishing direct partnerships with leading European importers, enabling factory-spec zero-mile vehicles with full documentation and provenance.</p></div><div class="tl-y" style="text-align:left;padding-left:2rem" data-r="r">Growth</div></div>
+        <div class="tl-i"><div class="tl-y" data-r="l">Expansion</div><div class="tl-c" data-r="r"><h4>Concierge Delivery Launched</h4><p>White-glove door-to-door delivery anywhere in Egypt, extending the Wheels experience directly to the client's doorstep.</p></div></div>
+        <div class="tl-i"><div class="tl-c" data-r="l"><h4>Present Day</h4><p>The definitive luxury showroom in Cairo. The legacy continues, one extraordinary automobile at a time.</p></div><div class="tl-y" style="text-align:left;padding-left:2rem" data-r="r">2026</div></div>
+      </div>
+    </div>
+    <div class="con" style="margin-bottom:5rem">
+      <div style="text-align:center;margin-bottom:3rem" data-r>
+        <p class="ey" style="margin-bottom:.8rem">Our People</p>
+        <h2 class="st">Meet the <em>Team</em></h2>
+      </div>
+      <div class="team-g">
+        <div class="tm-c" data-r data-d="1"><img class="tm-img" src="https://i.pravatar.cc/80?img=11" alt="" loading="lazy" onload="this.classList.add('loaded')"/><div class="tm-n">Ahmed Hassan</div><div class="tm-r">General Manager</div></div>
+        <div class="tm-c" data-r data-d="2"><img class="tm-img" src="https://i.pravatar.cc/80?img=5" alt="" loading="lazy" onload="this.classList.add('loaded')"/><div class="tm-n">Layla Nour</div><div class="tm-r">Sales Director</div></div>
+        <div class="tm-c" data-r data-d="3"><img class="tm-img" src="https://i.pravatar.cc/80?img=15" alt="" loading="lazy" onload="this.classList.add('loaded')"/><div class="tm-n">Omar Farouk</div><div class="tm-r">Import Specialist</div></div>
+        <div class="tm-c" data-r data-d="1"><img class="tm-img" src="https://i.pravatar.cc/80?img=25" alt="" loading="lazy" onload="this.classList.add('loaded')"/><div class="tm-n">Sara Khalil</div><div class="tm-r">Finance Advisor</div></div>
+        <div class="tm-c" data-r data-d="2"><img class="tm-img" src="https://i.pravatar.cc/80?img=8" alt="" loading="lazy" onload="this.classList.add('loaded')"/><div class="tm-n">Karim Adel</div><div class="tm-r">Client Relations</div></div>
+        <div class="tm-c" data-r data-d="3"><img class="tm-img" src="https://i.pravatar.cc/80?img=20" alt="" loading="lazy" onload="this.classList.add('loaded')"/><div class="tm-n">Nadia Samir</div><div class="tm-r">Marketing Director</div></div>
+      </div>
+    </div>
+    <div class="con">
+      <div style="text-align:center;margin-bottom:2rem" data-r>
+        <p class="ey" style="margin-bottom:.8rem">Find Us</p>
+        <h2 class="st">Visit Our <em>Showroom</em></h2>
+      </div>
+      <div style="border-radius:3px;overflow:hidden;border:1px solid var(--border)" data-r>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3452.274984090046!2d31.337113999999996!3d30.08631!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583fe8e948a773%3A0x605a50a9274eac7f!2sWheels!5e0!3m2!1sen!2seg!4v1776075730932!5m2!1sen!2seg" width="100%" height="380" style="border:none;display:block;filter:grayscale(100%) invert(0.88) hue-rotate(180deg)" loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+</div><div class="page" id="page-contact">
+<div style="min-height:100vh;padding:7rem 0 4rem">
+<div class="con">
+  <div data-r style="margin-bottom:3.5rem">
+    <p class="ey" style="margin-bottom:.6rem">Get in Touch</p>
+    <h1 class="st">Visit Our <em>Showroom</em></h1>
+  </div>
+  <div class="ct-lay">
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:3px;padding:2rem" data-r>
+      <p class="ey" style="margin-bottom:1.5rem;font-size:.6rem">Send a Message</p>
+      <div style="display:flex;flex-direction:column;gap:1rem">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:.8rem">
+          <div><label class="fl">Name *</label><input type="text" class="form-inp" placeholder="Ahmed Al-Rashidi"/></div>
+          <div><label class="fl">Email *</label><input type="email" class="form-inp" placeholder="email@example.com"/></div>
+        </div>
+        <div><label class="fl">Phone</label><input type="tel" class="form-inp" placeholder="+20 10 ···"/></div>
+        <div><label class="fl">Subject *</label>
+          <select class="form-sel">
+            <option value="">Select subject…</option>
+            <option>Vehicle Enquiry</option><option>Test Drive Booking</option>
+            <option>Financing Information</option><option>Trade-In Valuation</option><option>General Enquiry</option>
+          </select>
+        </div>
+        <div>
+          <p class="fl" style="margin-bottom:.5rem">Preferred Time</p>
+          <div style="display:flex;gap:.5rem">
+            <label style="flex:1;cursor:pointer"><input type="radio" name="pt" style="display:none" checked/><div style="border:1px solid var(--sapphire-bright);border-radius:3px;padding:.45rem;text-align:center;font-size:.68rem;text-transform:uppercase;letter-spacing:.1em;color:var(--sapphire-bright);background:rgba(30,58,138,.1)">Morning</div></label>
+            <label style="flex:1;cursor:pointer"><input type="radio" name="pt" style="display:none"/><div style="border:1px solid var(--border);border-radius:3px;padding:.45rem;text-align:center;font-size:.68rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text3)">Afternoon</div></label>
+            <label style="flex:1;cursor:pointer"><input type="radio" name="pt" style="display:none"/><div style="border:1px solid var(--border);border-radius:3px;padding:.45rem;text-align:center;font-size:.68rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text3)">Evening</div></label>
+          </div>
+        </div>
+        <div><label class="fl">Message *</label><textarea class="form-ta" rows="5" placeholder="Tell us how we can help you…"></textarea></div>
+        <button class="btn btn-s btn-w">Send Message</button>
+      </div>
+    </div>
+    <div data-r data-d="2">
+      <img src="https://images.unsplash.com/photo-1562426509-5044a121aa49?w=800&q=80" alt="Dealership Showroom" style="width:100%;height:220px;object-fit:cover;border-radius:3px;margin-bottom:2rem;box-shadow:0 10px 30px var(--shadow)" loading="lazy" onload="this.classList.add('loaded')"/>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;line-height:1.2;margin-bottom:1.2rem">We'd love to<br><em style="font-style:italic;color:var(--sapphire-bright)">hear from you</em></h2>
+      <p style="color:var(--text2);font-size:.88rem;line-height:1.9;margin-bottom:2rem">Whether you're looking for a specific model, need advice on financing, or simply want to experience our collection — our team is at your service.</p>
+      <div class="ct-d"><div class="ct-ic">📍</div><div><p class="ct-lb">Address</p><p class="ct-v">46 El-Thawra Street, Almazah, Heliopolis, Cairo</p></div></div>
+      <div class="ct-d"><div class="ct-ic">📞</div><div><p class="ct-lb">Phone</p><p class="ct-v"><a href="tel:+201095450210">+20 10 9545 0210</a></p></div></div>
+      <div class="ct-d"><div class="ct-ic">✉</div><div><p class="ct-lb">Email</p><p class="ct-v"><a href="mailto:sales@wheels-egypt.com">sales@wheels-egypt.com</a></p></div></div>
+      <div class="ct-d"><div class="ct-ic">🕐</div><div><p class="ct-lb">Opening Hours</p><p class="ct-v">Sun–Thu & Sat: 11AM–11:30PM<br>Tuesday: 11AM–12:30AM</p></div></div>
+      <div id="open-badge" style="margin-bottom:1.5rem"></div>
+      <a href="https://wa.me/201095450210" target="_blank" class="btn btn-w" style="background:#25D366;color:white;border:none;display:flex;align-items:center;justify-content:center;gap:.6rem;margin-bottom:1.5rem">💬 Chat on WhatsApp</a>
+      <div style="border-radius:3px;overflow:hidden;border:1px solid var(--border)">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3452.274984090046!2d31.337113999999996!3d30.08631!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583fe8e948a773%3A0x605a50a9274eac7f!2sWheels!5e0!3m2!1sen!2seg!4v1776075730932!5m2!1sen!2seg" width="100%" height="280" style="border:none;display:block;filter:grayscale(100%) invert(0.88) hue-rotate(180deg)" loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div><div class="page" id="page-wishlist">
+<div style="min-height:100vh;padding:7rem 0 4rem">
+<div class="con">
+  <div data-r style="margin-bottom:3rem">
+    <p class="ey" style="margin-bottom:.6rem">Saved Vehicles</p>
+    <h1 class="st">Your <em>Wishlist</em></h1>
+  </div>
+  <div id="wl-empty" style="display:none;text-align:center;padding:5rem 0">
+    <div style="font-size:4rem;margin-bottom:1.5rem;opacity:.3">♡</div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;margin-bottom:.8rem">Your wishlist is empty</h2>
+    <p style="color:var(--text3);margin-bottom:2rem">Save vehicles you love while browsing our collection.</p>
+    <a onclick="sp('inventory')" class="btn btn-s">Browse Inventory</a>
+  </div>
+  <div id="wl-content">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:2rem">
+      <p style="color:var(--text3);font-size:.85rem"><span id="wl-count" style="color:var(--text)">2</span> saved vehicles</p>
+      <button class="btn btn-o btn-sm">Request Quote for All</button>
+    </div>
+    <div class="cg" id="wl-grid"></div>
+  </div>
+</div>
+</div>
+</div><div class="page" id="page-admin-login">
+<div style="min-height:100vh;background:var(--bg);display:flex;align-items:center;justify-content:center;padding:2rem">
+  <div style="width:100%;max-width:400px">
+    <div style="text-align:center;margin-bottom:2rem">
+      <span style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:var(--gold)">WHEELS AUTOMOTIVE</span>
+      <h1 style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:300;margin-top:.5rem">Admin Access</h1>
+      <p style="color:var(--text3);font-size:.82rem;margin-top:.3rem">Wheels Management Portal</p>
+    </div>
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:3px;padding:2rem" id="login-card">
+      <div style="display:flex;flex-direction:column;gap:1rem;margin-bottom:1.5rem">
+        <div><label class="fl">Email</label><input type="email" class="form-inp" placeholder="admin@wheels-egypt.com" id="l-email"/></div>
+        <div><label class="fl">Password</label><input type="password" class="form-inp" placeholder="••••••••" id="l-pass"/></div>
+      </div>
+      <p id="l-err" style="color:#f87171;font-size:.78rem;text-align:center;margin-bottom:.8rem;display:none">Invalid credentials. Please try again.</p>
+      <button onclick="doLogin()" class="btn btn-s btn-w">Sign In</button>
+    </div>
+    <p style="text-align:center;margin-top:1.5rem">
+      <a onclick="sp('home')" style="color:var(--text3);font-size:.78rem;cursor:pointer;transition:color .3s" onmouseover="this.style.color='var(--sapphire-bright)'" onmouseout="this.style.color='var(--text3)'">← Back to Website</a>
+    </p>
+  </div>
+</div>
+</div>
+
+<div class="page" id="page-admin-dashboard">
+<div class="adsh">
+  <aside class="adsi" id="adsi-dash">
+    <div style="padding:1.5rem;border-bottom:1px solid var(--border)">
+      <span style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--gold)">WHEELS AUTOMOTIVE</span>
+      <p style="font-size:.6rem;text-transform:uppercase;letter-spacing:.2em;color:var(--text3);margin-top:.3rem">Admin Panel</p>
+    </div>
+    <nav style="flex:1;padding:.8rem 0">
+      <a class="ani act" data-ap="admin-dashboard" onclick="sp('admin-dashboard')">📊 Dashboard</a>
+      <a class="ani" data-ap="admin-inventory" onclick="sp('admin-inventory')">🚗 Inventory</a>
+      <a class="ani" data-ap="admin-bookings" onclick="sp('admin-bookings')">📅 Bookings <span class="abd">2</span></a>
+      <a class="ani" data-ap="admin-inquiries" onclick="sp('admin-inquiries')">💬 Inquiries <span class="abd">1</span></a>
+      <a class="ani" data-ap="admin-settings" onclick="sp('admin-settings')">⚙ Settings</a>
+    </nav>
+    <div style="padding:.8rem 0;border-top:1px solid var(--border)">
+      <a class="ani" onclick="sp('home')" style="font-size:.78rem;color:var(--text3)">← Back to Website</a>
+      <a class="ani" onclick="sp('admin-login')" style="font-size:.78rem;color:var(--text3)">⎋ Logout</a>
+    </div>
+  </aside>
+  <div class="adm">
+    <header class="adtb">
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:300">Dashboard</h2>
+      <div style="display:flex;align-items:center;gap:.8rem">
+        <span style="font-size:.72rem;color:var(--text3)">admin@wheels-egypt.com</span>
+        <div style="width:32px;height:32px;border-radius:50%;background:rgba(30,58,138,.15);border:1px solid var(--border2);display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:600;color:var(--sapphire-bright)">A</div>
+      </div>
+    </header>
+    <main class="adco">
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:2rem">
+        <div class="stc"><span style="font-size:1.5rem">🚗</span><div class="stcv">8</div><div class="stcl">Total Cars</div></div>
+        <div class="stc"><span style="font-size:1.5rem">📅</span><div class="stcv">2</div><div class="stcl">Bookings This Month</div></div>
+        <div class="stc"><span style="font-size:1.5rem">💬</span><div class="stcv">1</div><div class="stcl">Unread Inquiries</div></div>
+        <div class="stc"><span style="font-size:1.5rem">👁</span><div class="stcv">1,247</div><div class="stcl">Total Views</div></div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:1.5rem">
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:3px;padding:1.5rem">
+          <p style="font-size:.65rem;text-transform:uppercase;letter-spacing:.2em;color:var(--gold);margin-bottom:1.2rem">Inventory by Brand</p>
+          <div class="bar-r"><span class="bar-l">Mercedes-Benz</span><div class="bar-t"><div class="bar-f" style="--bw:37.5%"></div></div><span class="bar-c">3</span></div>
+          <div class="bar-r"><span class="bar-l">Porsche</span><div class="bar-t"><div class="bar-f" style="--bw:25%"></div></div><span class="bar-c">2</span></div>
+          <div class="bar-r"><span class="bar-l">BMW</span><div class="bar-t"><div class="bar-f" style="--bw:12.5%"></div></div><span class="bar-c">1</span></div>
+          <div class="bar-r"><span class="bar-l">Land Rover</span><div class="bar-t"><div class="bar-f" style="--bw:12.5%"></div></div><span class="bar-c">1</span></div>
+        </div>
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:3px;padding:1.5rem;overflow:hidden">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.2rem">
+            <p style="font-size:.65rem;text-transform:uppercase;letter-spacing:.2em;color:var(--gold)">Recent Bookings</p>
+            <a onclick="sp('admin-bookings')" style="font-size:.7rem;color:var(--text3);cursor:pointer;transition:color .3s" onmouseover="this.style.color='var(--sapphire-bright)'" onmouseout="this.style.color='var(--text3)'">View all →</a>
+          </div>
+          <table class="brc" style="font-size:.8rem">
+            <tr><td>Ahmed Al-Rashidi</td><td>MB GLC 300</td><td><span class="sbp sp-p">PENDING</span></td></tr>
+            <tr><td>Layla Hassan</td><td>Porsche Macan</td><td><span class="sbp sp-c">CONFIRMED</span></td></tr>
+          </table>
+        </div>
+      </div>
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:3px;padding:1.5rem">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.2rem">
+          <p style="font-size:.65rem;text-transform:uppercase;letter-spacing:.2em;color:var(--gold)">Recent Inquiries</p>
+          <a onclick="sp('admin-inquiries')" style="font-size:.7rem;color:var(--text3);cursor:pointer;transition:color .3s" onmouseover="this.style.color='var(--sapphire-bright)'" onmouseout="this.style.color='var(--text3)'">View all →</a>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:.6rem">
+          <div style="display:flex;align-items:center;gap:.8rem;padding:.6rem 0;border-bottom:1px solid var(--border)">
+            <div style="width:7px;height:7px;border-radius:50%;background:var(--sapphire-bright);flex-shrink:0"></div>
+            <p style="font-size:.83rem;flex:1">Karim El-Sayed — <span style="color:var(--text3)">Vehicle Enquiry</span></p>
+            <span style="font-size:.7rem;color:var(--text3)">2h ago</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:.8rem;padding:.6rem 0;border-bottom:1px solid var(--border)">
+            <div style="width:7px;height:7px;border-radius:50%;background:var(--surface3);border:1px solid var(--border2);flex-shrink:0"></div>
+            <p style="font-size:.83rem;flex:1">Sara Al-Masri — <span style="color:var(--text3)">Trade-In Valuation</span></p>
+            <span style="font-size:.7rem;color:var(--text3)">1d ago</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:.8rem;padding:.6rem 0">
+            <div style="width:7px;height:7px;border-radius:50%;background:var(--sapphire-bright);flex-shrink:0"></div>
+            <p style="font-size:.83rem;flex:1">Mohamed Farouk — <span style="color:var(--text3)">Financing Info</span></p>
+            <span style="font-size:.7rem;color:var(--text3)">3d ago</span>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+</div>
+
+<div class="page" id="page-admin-inventory">
+<div class="adsh">
+  <aside class="adsi">
+    <div style="padding:1.5rem;border-bottom:1px solid var(--border)"><span style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--gold)">WHEELS AUTOMOTIVE</span><p style="font-size:.6rem;text-transform:uppercase;letter-spacing:.2em;color:var(--text3);margin-top:.3rem">Admin Panel</p></div>
+    <nav style="flex:1;padding:.8rem 0">
+      <a class="ani" data-ap="admin-dashboard" onclick="sp('admin-dashboard')">📊 Dashboard</a>
+      <a class="ani act" data-ap="admin-inventory" onclick="sp('admin-inventory')">🚗 Inventory</a>
+      <a class="ani" data-ap="admin-bookings" onclick="sp('admin-bookings')">📅 Bookings <span class="abd">2</span></a>
+      <a class="ani" data-ap="admin-inquiries" onclick="sp('admin-inquiries')">💬 Inquiries <span class="abd">1</span></a>
+      <a class="ani" data-ap="admin-settings" onclick="sp('admin-settings')">⚙ Settings</a>
+    </nav>
+    <div style="padding:.8rem 0;border-top:1px solid var(--border)"><a class="ani" onclick="sp('home')" style="font-size:.78rem;color:var(--text3)">← Back to Website</a><a class="ani" onclick="sp('admin-login')" style="font-size:.78rem;color:var(--text3)">⎋ Logout</a></div>
+  </aside>
+  <div class="adm">
+    <header class="adtb">
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:300">Inventory</h2>
+      <button onclick="sp('admin-car-form')" class="btn btn-s btn-sm">+ Add New Car</button>
+    </header>
+    <main class="adco">
+      <div style="display:flex;gap:1rem;margin-bottom:1.5rem;flex-wrap:wrap">
+        <input type="text" class="form-inp" placeholder="Search by brand, model, year…" style="max-width:320px"/>
+        <select class="form-sel" style="width:auto"><option>All Conditions</option><option>New</option><option>Pre-Owned</option></select>
+        <select class="form-sel" style="width:auto"><option>All Status</option><option>Published</option><option>Draft</option></select>
+      </div>
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:3px;overflow:hidden">
+        <table class="brc" style="min-width:700px">
+          <thead><tr><th></th><th>Vehicle</th><th>Year</th><th>Price</th><th>Condition</th><th>Status</th><th>Views</th><th>Actions</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><img src="https://SaveInsta.me_599050988_18006695342821394_3797459272157109471_n.jpg79313-40f8afb4b4d8?w=120&q=80" style="width:60px;height:40px;object-fit:cover;border-radius:2px" loading="lazy" onload="this.classList.add('loaded')"/></td>
+              <td><p style="font-weight:500">Mercedes-Benz GLC 300</p></td><td style="color:var(--text3)">2026</td>
+              <td style="font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--gold-bright)">£E 6.3M</td>
+              <td><span class="sbp sp-c">New</span></td>
+              <td><button class="tog on"></button></td><td style="color:var(--text3)">312</td>
+              <td><div style="display:flex;gap:.8rem"><a onclick="sp('admin-car-form')" style="color:var(--sapphire-bright);cursor:pointer;font-size:.88rem" title="Edit">✏</a><a onclick="document.getElementById('del-modal').style.display='flex'" style="color:var(--text3);cursor:pointer;font-size:.88rem;transition:color .3s" onmouseover="this.style.color='#f87171'" onmouseout="this.style.color='var(--text3)'" title="Delete">🗑</a></div></td>
+            </tr>
+            <tr>
+              <td><img src="https://images.unsplash.com/photo-1563720223185-11003d516935?w=120&q=80" style="width:60px;height:40px;object-fit:cover;border-radius:2px" loading="lazy" onload="this.classList.add('loaded')"/></td>
+              <td><p style="font-weight:500">Cadillac Escalade</p></td><td style="color:var(--text3)">2024</td>
+              <td style="font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--gold-bright)">£E 13.0M</td>
+              <td><span class="sbp sp-c">New</span></td>
+              <td><button class="tog on"></button></td><td style="color:var(--text3)">284</td>
+              <td><div style="display:flex;gap:.8rem"><a onclick="sp('admin-car-form')" style="color:var(--sapphire-bright);cursor:pointer;font-size:.88rem">✏</a><a onclick="document.getElementById('del-modal').style.display='flex'" style="color:var(--text3);cursor:pointer;font-size:.88rem;transition:color .3s" onmouseover="this.style.color='#f87171'" onmouseout="this.style.color='var(--text3)'">🗑</a></div></td>
+            </tr>
+            <tr>
+              <td><img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=120&q=80" style="width:60px;height:40px;object-fit:cover;border-radius:2px" loading="lazy" onload="this.classList.add('loaded')"/></td>
+              <td><p style="font-weight:500">Porsche Macan</p></td><td style="color:var(--text3)">2025</td>
+              <td style="font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--gold-bright)">£E 5.8M</td>
+              <td><span class="sbp sp-c">New</span></td>
+              <td><button class="tog on"></button></td><td style="color:var(--text3)">156</td>
+              <td><div style="display:flex;gap:.8rem"><a onclick="sp('admin-car-form')" style="color:var(--sapphire-bright);cursor:pointer;font-size:.88rem">✏</a><a onclick="document.getElementById('del-modal').style.display='flex'" style="color:var(--text3);cursor:pointer;font-size:.88rem;transition:color .3s" onmouseover="this.style.color='#f87171'" onmouseout="this.style.color='var(--text3)'">🗑</a></div></td>
+            </tr>
+            <tr>
+              <td><img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?w=120&q=80" style="width:60px;height:40px;object-fit:cover;border-radius:2px" loading="lazy" onload="this.classList.add('loaded')"/></td>
+              <td><p style="font-weight:500">BMW X6 M60i</p></td><td style="color:var(--text3)">2025</td>
+              <td style="font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--gold-bright)">£E 8.5M</td>
+              <td><span class="sbp sp-c">New</span></td>
+              <td><button class="tog"></button></td><td style="color:var(--text3)">95</td>
+              <td><div style="display:flex;gap:.8rem"><a onclick="sp('admin-car-form')" style="color:var(--sapphire-bright);cursor:pointer;font-size:.88rem">✏</a><a onclick="document.getElementById('del-modal').style.display='flex'" style="color:var(--text3);cursor:pointer;font-size:.88rem;transition:color .3s" onmouseover="this.style.color='#f87171'" onmouseout="this.style.color='var(--text3)'">🗑</a></div></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+</div>
+</div>
+
+
+<div class="page" id="page-admin-car-form">
+<div class="adsh">
+  <aside class="adsi">
+    <div style="padding:1.5rem;border-bottom:1px solid var(--border)"><span style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--gold)">WHEELS AUTOMOTIVE</span><p style="font-size:.6rem;text-transform:uppercase;letter-spacing:.2em;color:var(--text3);margin-top:.3rem">Admin Panel</p></div>
+    <nav style="flex:1;padding:.8rem 0">
+      <a class="ani" onclick="sp('admin-dashboard')">📊 Dashboard</a><a class="ani act" onclick="sp('admin-inventory')">🚗 Inventory</a>
+      <a class="ani" onclick="sp('admin-bookings')">📅 Bookings <span class="abd">2</span></a><a class="ani" onclick="sp('admin-inquiries')">💬 Inquiries <span class="abd">1</span></a><a class="ani" onclick="sp('admin-settings')">⚙ Settings</a>
+    </nav>
+    <div style="padding:.8rem 0;border-top:1px solid var(--border)"><a class="ani" onclick="sp('home')" style="font-size:.78rem;color:var(--text3)">← Back to Website</a><a class="ani" onclick="sp('admin-login')" style="font-size:.78rem;color:var(--text3)">⎋ Logout</a></div>
+  </aside>
+  <div class="adm">
+    <header class="adtb">
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:300">Add New Car</h2>
+      <button onclick="sp('admin-inventory')" class="btn btn-g btn-sm">← Back to Inventory</button>
+    </header>
+    <main class="adco">
+      <div class="fsc"><p class="fsc-t">Identity</p>
+        <div class="fsc-grid">
+          <div><label class="fl">Brand *</label><select class="form-sel"><option>Mercedes-Benz</option><option>Porsche</option><option>BMW</option><option>Land Rover</option><option>Cadillac</option><option>Audi</option><option>Volvo</option></select></div>
+          <div><label class="fl">Model *</label><input type="text" class="form-inp" placeholder="GLC 300"/></div>
+          <div><label class="fl">Variant / Trim</label><input type="text" class="form-inp" placeholder="Coupe AMG Line"/></div>
+          <div><label class="fl">Year *</label><input type="number" class="form-inp" value="2026"/></div>
+          <div><label class="fl">Condition *</label><select class="form-sel"><option>New</option><option>Pre-Owned</option></select></div>
+          <div><label class="fl">Body Type *</label><select class="form-sel"><option>Sedan</option><option>SUV</option><option>Coupe</option><option>Convertible</option><option>Wagon</option></select></div>
+        </div>
+        <div style="display:flex;gap:2rem;margin-top:1rem">
+          <label style="display:flex;align-items:center;gap:.6rem;cursor:pointer;font-size:.82rem;color:var(--text2)"><input type="checkbox" style="accent-color:var(--sapphire-bright)" checked/> Published (visible on site)</label>
+          <label style="display:flex;align-items:center;gap:.6rem;cursor:pointer;font-size:.82rem;color:var(--text2)"><input type="checkbox" style="accent-color:var(--sapphire-bright)" checked/> Featured (show on homepage)</label>
+        </div>
+      </div>
+      <div class="fsc"><p class="fsc-t">Pricing</p>
+        <div class="fsc-grid">
+          <div><label class="fl">Price (EGP) *</label><input type="number" class="form-inp" value="6300000"/></div>
+          <div><label class="fl">Original MSRP</label><input type="number" class="form-inp" placeholder="Optional"/></div>
+          <div style="display:flex;align-items:center;gap:.8rem;padding-top:1.5rem"><button class="tog on"></button><span style="font-size:.82rem;color:var(--text2)">Finance Available</span></div>
+        </div>
+      </div>
+      <div class="fsc"><p class="fsc-t">Performance</p>
+        <div class="fsc-grid">
+          <div><label class="fl">Engine *</label><input type="text" class="form-inp" value="2.0L Turbo"/></div>
+          <div><label class="fl">Horsepower *</label><input type="number" class="form-inp" value="258"/></div>
+          <div><label class="fl">Torque (Nm)</label><input type="number" class="form-inp" value="400"/></div>
+          <div><label class="fl">0–100 km/h (s) *</label><input type="number" class="form-inp" value="6.2" step="0.1"/></div>
+          <div><label class="fl">Top Speed (km/h) *</label><input type="number" class="form-inp" value="240"/></div>
+          <div><label class="fl">Transmission *</label><select class="form-sel"><option>9-Speed Automatic</option><option>8-Speed PDK</option><option>7-Speed PDK</option><option>6-Speed Manual</option><option>DCT</option></select></div>
+          <div><label class="fl">Drivetrain</label><select class="form-sel"><option>AWD</option><option>RWD</option><option>FWD</option><option>4WD</option></select></div>
+          <div><label class="fl">Fuel Type *</label><select class="form-sel"><option>Petrol</option><option>Diesel</option><option>Hybrid</option><option>Electric</option><option>Plug-in Hybrid</option></select></div>
+        </div>
+      </div>
+      <div class="fsc"><p class="fsc-t">Exterior & Interior</p>
+        <div class="fsc-grid">
+          <div><label class="fl">Exterior Colour *</label><div style="display:flex;gap:.5rem;align-items:center"><input type="text" class="form-inp" value="Obsidian Black" style="flex:1"/><input type="color" value="#050505" style="width:32px;height:38px;border:1px solid var(--border);border-radius:3px;cursor:pointer;background:none;padding:2px"/></div></div>
+          <div><label class="fl">Interior Colour</label><input type="text" class="form-inp" value="Saddle Brown Leather"/></div>
+          <div><label class="fl">Upholstery</label><select class="form-sel"><option>Nappa Leather</option><option>Full Leather</option><option>Alcantara</option><option>Semi-aniline</option></select></div>
+          <div><label class="fl">Seats *</label><input type="number" class="form-inp" value="5"/></div>
+          <div><label class="fl">Wheel Size</label><input type="text" class="form-inp" value="20 inch"/></div>
+          <div><label class="fl">Mileage (km)</label><input type="number" class="form-inp" value="0"/></div>
+        </div>
+      </div>
+      <div class="fsc"><p class="fsc-t">Descriptions</p>
+        <div style="display:flex;flex-direction:column;gap:1rem">
+          <div><label class="fl">Short Description (for cards — max 180 chars)</label><textarea class="form-ta" rows="2" style="min-height:64px" maxlength="180">The perfect blend of sportiness and luxury functionality.</textarea><p style="font-size:.68rem;color:var(--text3);margin-top:.3rem;text-align:right">57/180</p></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+            <div><label class="fl">Features (one per line)</label><textarea class="form-ta" rows="5" style="min-height:110px">Burmester Sound
+Ambient Lighting
+Heated Seats
+AMG Line Interior</textarea></div>
+            <div><label class="fl">Safety & Tech (one per line)</label><textarea class="form-ta" rows="5" style="min-height:110px">Automatic Emergency Braking
+360° Camera
+Lane Departure Warning
+Blind Spot Monitor
+Adaptive Cruise Control</textarea></div>
+          </div>
+          <div><label class="fl">Full Description</label><textarea class="form-ta" rows="5">The Mercedes-Benz GLC Coupe blends the sportiness of a coupe with the functionality of an SUV. With its bold AMG styling and state-of-the-art MBUX infotainment, it offers an engaging and luxurious driving experience.</textarea></div>
+        </div>
+      </div>
+      <div class="fsc"><p class="fsc-t">Media — Images & Video</p>
+        <div class="upz" style="margin-bottom:1rem" onclick="document.getElementById('img-inp').click()">
+          <input id="img-inp" type="file" multiple accept="image/*" style="display:none"/>
+          <div style="font-size:2.5rem;margin-bottom:.6rem">📷</div>
+          <p style="font-size:.85rem;color:var(--text2)">Drop images here or <span style="color:var(--sapphire-bright)">click to browse</span></p>
+          <p style="font-size:.72rem;color:var(--text3);margin-top:.3rem">JPG, PNG, WebP · Max 10MB each · Up to 20 images</p>
+        </div>
+        <div style="display:flex;gap:.8rem;margin-bottom:1.5rem">
+          <div style="position:relative"><img src="https://SaveInsta.me_599050988_18006695342821394_3797459272157109471_n.jpg79313-40f8afb4b4d8?w=200&q=80" style="width:90px;height:60px;object-fit:cover;border-radius:2px;border:2px solid var(--sapphire-bright)" loading="lazy" onload="this.classList.add('loaded')"/><button style="position:absolute;top:-6px;right:-6px;width:18px;height:18px;border-radius:50%;background:var(--surface);border:1px solid var(--border);cursor:pointer;font-size:.6rem;color:var(--text3)">✕</button><span style="position:absolute;top:-6px;left:-6px;background:var(--sapphire-bright);color:white;font-size:.55rem;padding:.1rem .3rem;border-radius:2px">★</span></div>
+          <div style="position:relative"><img src="https://images.unsplash.com/photo-1617531653332-bd46c24f2068?w=200&q=80" style="width:90px;height:60px;object-fit:cover;border-radius:2px;border:2px solid transparent" loading="lazy" onload="this.classList.add('loaded')"/><button style="position:absolute;top:-6px;right:-6px;width:18px;height:18px;border-radius:50%;background:var(--surface);border:1px solid var(--border);cursor:pointer;font-size:.6rem;color:var(--text3)">✕</button></div>
+        </div>
+        <div class="upz" style="padding:1.5rem" onclick="document.getElementById('vid-inp').click()">
+          <input id="vid-inp" type="file" accept="video/*" style="display:none"/>
+          <p style="font-size:.82rem;color:var(--text2)">▶ Drop video here or click to browse</p>
+          <p style="font-size:.72rem;color:var(--text3);margin-top:.3rem">MP4, WebM · Max 200MB · 1 video per car</p>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:flex-end;gap:.8rem;padding-top:1rem;border-top:1px solid var(--border)">
+        <button onclick="sp('admin-inventory')" class="btn btn-g">Cancel</button>
+        <button onclick="sp('admin-inventory')" class="btn btn-o">Save as Draft</button>
+        <button onclick="sp('admin-inventory')" class="btn btn-s btn-lg">Publish Car</button>
+      </div>
+    </main>
+  </div>
+</div>
+</div>
+
+<div class="page" id="page-admin-bookings">
+<div class="adsh">
+  <aside class="adsi"><div style="padding:1.5rem;border-bottom:1px solid var(--border)"><span style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--gold)">WHEELS AUTOMOTIVE</span><p style="font-size:.6rem;text-transform:uppercase;letter-spacing:.2em;color:var(--text3);margin-top:.3rem">Admin Panel</p></div>
+    <nav style="flex:1;padding:.8rem 0"><a class="ani" onclick="sp('admin-dashboard')">📊 Dashboard</a><a class="ani" onclick="sp('admin-inventory')">🚗 Inventory</a><a class="ani act" onclick="sp('admin-bookings')">📅 Bookings <span class="abd">2</span></a><a class="ani" onclick="sp('admin-inquiries')">💬 Inquiries <span class="abd">1</span></a><a class="ani" onclick="sp('admin-settings')">⚙ Settings</a></nav>
+    <div style="padding:.8rem 0;border-top:1px solid var(--border)"><a class="ani" onclick="sp('home')" style="font-size:.78rem;color:var(--text3)">← Back to Website</a><a class="ani" onclick="sp('admin-login')" style="font-size:.78rem;color:var(--text3)">⎋ Logout</a></div>
+  </aside>
+  <div class="adm">
+    <header class="adtb"><h2 style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:300">Bookings</h2><button class="btn btn-g btn-sm">Export CSV ↓</button></header>
+    <main class="adco">
+      <div style="display:flex;gap:.8rem;margin-bottom:1.5rem;flex-wrap:wrap">
+        <select class="form-sel" style="width:auto"><option>All Status</option><option>Pending</option><option>Confirmed</option><option>Completed</option><option>Cancelled</option></select>
+        <input type="date" class="form-inp" style="width:auto"/>
+        <input type="date" class="form-inp" style="width:auto"/>
+      </div>
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:3px;overflow:hidden">
+        <table class="brc" style="min-width:700px">
+          <thead><tr><th>Ref</th><th>Client</th><th>Car</th><th>Date</th><th>Time</th><th>Status</th><th>Phone</th><th>Actions</th></tr></thead>
+          <tbody>
+            <tr style="cursor:pointer" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'table-row':'none'">
+              <td style="font-family:'Cormorant Garamond',serif;font-size:.8rem;color:var(--sapphire-bright)">WHL-ABC</td>
+              <td>Ahmed Al-Rashidi</td><td style="color:var(--text3)">MB GLC 300</td><td style="color:var(--text3)">Dec 20, 2024</td><td style="color:var(--text3)">3:00 PM</td>
+              <td><span class="sbp sp-p">PENDING</span></td><td style="color:var(--text3)">+20 10 1234 5678</td>
+              <td><div style="display:flex;gap:.6rem"><button class="btn btn-g btn-sm" style="font-size:.62rem;padding:.35rem .7rem">✓ Confirm</button><button style="background:none;border:none;cursor:pointer;color:var(--text3);transition:color .3s" onmouseover="this.style.color='#f87171'" onmouseout="this.style.color='var(--text3)'">🗑</button></div></td>
+            </tr>
+            <tr style="display:table-row;background:var(--surface2)">
+              <td colspan="8" style="padding:1.5rem">
+                <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2rem">
+                  <div><p style="font-size:.62rem;text-transform:uppercase;letter-spacing:.15em;color:var(--text3);margin-bottom:.5rem">Client Details</p><p style="font-size:.85rem">Ahmed Al-Rashidi<br><span style="color:var(--text3)">ahmed@example.com</span><br><span style="color:var(--text3)">+20 10 1234 5678</span></p></div>
+                  <div><p style="font-size:.62rem;text-transform:uppercase;letter-spacing:.15em;color:var(--text3);margin-bottom:.5rem">Booking Details</p><p style="font-size:.85rem">Mercedes-Benz GLC 300 2026<br><span style="color:var(--text3)">Dec 20, 2024 · 3:00 PM</span><br><span style="color:var(--text3)">Contact via: Phone</span></p></div>
+                  <div><p style="font-size:.62rem;text-transform:uppercase;letter-spacing:.15em;color:var(--text3);margin-bottom:.5rem">Notes</p><p style="font-size:.85rem;color:var(--text2);font-style:italic">"Interested in the Obsidian Black variant. Returning client."</p></div>
+                </div>
+              </td>
+            </tr>
+            <tr style="cursor:pointer" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'table-row':'none'">
+              <td style="font-family:'Cormorant Garamond',serif;font-size:.8rem;color:var(--sapphire-bright)">WHL-DEF</td>
+              <td>Layla Hassan</td><td style="color:var(--text3)">Porsche Macan 2025</td><td style="color:var(--text3)">Dec 22, 2024</td><td style="color:var(--text3)">11:00 AM</td>
+              <td><span class="sbp sp-c">CONFIRMED</span></td><td style="color:var(--text3)">+20 12 9876 5432</td>
+              <td><button style="background:none;border:none;cursor:pointer;color:var(--text3);transition:color .3s" onmouseover="this.style.color='#f87171'" onmouseout="this.style.color='var(--text3)'">🗑</button></td>
+            </tr>
+            <tr style="display:none;background:var(--surface2)"><td colspan="8" style="padding:1.2rem 1.5rem"><p style="color:var(--text3);font-size:.85rem">Layla Hassan · layla@example.com · +20 12 9876 5432 · Porsche Macan 2025</p></td></tr>
+            <tr>
+              <td style="font-family:'Cormorant Garamond',serif;font-size:.8rem;color:var(--sapphire-bright)">WHL-GHI</td>
+              <td>Karim El-Sayed</td><td style="color:var(--text3)">BMW X6 M60i 2025</td><td style="color:var(--text3)">Jan 5, 2025</td><td style="color:var(--text3)">5:00 PM</td>
+              <td><span class="sbp sp-d">COMPLETED</span></td><td style="color:var(--text3)">+20 11 5555 1234</td>
+              <td><button style="background:none;border:none;cursor:pointer;color:var(--text3);transition:color .3s" onmouseover="this.style.color='#f87171'" onmouseout="this.style.color='var(--text3)'">🗑</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+</div>
+</div>
+
+<div class="page" id="page-admin-inquiries">
+<div class="adsh">
+  <aside class="adsi"><div style="padding:1.5rem;border-bottom:1px solid var(--border)"><span style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--gold)">WHEELS AUTOMOTIVE</span><p style="font-size:.6rem;text-transform:uppercase;letter-spacing:.2em;color:var(--text3);margin-top:.3rem">Admin Panel</p></div>
+    <nav style="flex:1;padding:.8rem 0"><a class="ani" onclick="sp('admin-dashboard')">📊 Dashboard</a><a class="ani" onclick="sp('admin-inventory')">🚗 Inventory</a><a class="ani" onclick="sp('admin-bookings')">📅 Bookings <span class="abd">2</span></a><a class="ani act" onclick="sp('admin-inquiries')">💬 Inquiries <span class="abd">1</span></a><a class="ani" onclick="sp('admin-settings')">⚙ Settings</a></nav>
+    <div style="padding:.8rem 0;border-top:1px solid var(--border)"><a class="ani" onclick="sp('home')" style="font-size:.78rem;color:var(--text3)">← Back to Website</a><a class="ani" onclick="sp('admin-login')" style="font-size:.78rem;color:var(--text3)">⎋ Logout</a></div>
+  </aside>
+  <div class="adm">
+    <header class="adtb"><h2 style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:300">Inquiries <span style="color:var(--text3);font-size:1rem">· 2 unread</span></h2></header>
+    <main class="adco">
+      <div class="inq-lay">
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:3px;overflow:hidden">
+          <table class="brc">
+            <thead><tr><th></th><th>Name</th><th>Email</th><th>Subject</th><th>Date</th><th>Actions</th></tr></thead>
+            <tbody>
+              <tr style="cursor:pointer;font-weight:500" onclick="">
+                <td><div style="width:7px;height:7px;border-radius:50%;background:var(--sapphire-bright)"></div></td>
+                <td>Karim El-Sayed</td><td style="color:var(--text3)">karim@example.com</td><td>Vehicle Enquiry</td><td style="color:var(--text3)">2h ago</td>
+                <td><div style="display:flex;gap:.5rem"><button style="background:none;border:none;cursor:pointer;color:var(--text3);font-size:.85rem" title="View">👁</button><a href="mailto:karim@example.com" style="color:var(--text3);font-size:.85rem" title="Reply">✉</a><button style="background:none;border:none;cursor:pointer;color:var(--text3);font-size:.85rem;transition:color .3s" onmouseover="this.style.color='#f87171'" onmouseout="this.style.color='var(--text3)'">🗑</button></div></td>
+              </tr>
+              <tr style="cursor:pointer;color:var(--text3)">
+                <td><div style="width:7px;height:7px;border-radius:50%;background:var(--surface3);border:1px solid var(--border2)"></div></td>
+                <td>Sara Al-Masri</td><td>sara@example.com</td><td>Trade-In Valuation</td><td>1d ago</td>
+                <td><div style="display:flex;gap:.5rem"><button style="background:none;border:none;cursor:pointer;color:var(--text3);font-size:.85rem">👁</button><a href="mailto:sara@example.com" style="color:var(--text3);font-size:.85rem">✉</a><button style="background:none;border:none;cursor:pointer;color:var(--text3);font-size:.85rem;transition:color .3s" onmouseover="this.style.color='#f87171'" onmouseout="this.style.color='var(--text3)'">🗑</button></div></td>
+              </tr>
+              <tr style="cursor:pointer;font-weight:500">
+                <td><div style="width:7px;height:7px;border-radius:50%;background:var(--sapphire-bright)"></div></td>
+                <td>Mohamed Farouk</td><td style="color:var(--text3)">moh@example.com</td><td>Financing Info</td><td style="color:var(--text3)">3d ago</td>
+                <td><div style="display:flex;gap:.5rem"><button style="background:none;border:none;cursor:pointer;color:var(--text3);font-size:.85rem">👁</button><a href="mailto:moh@example.com" style="color:var(--text3);font-size:.85rem">✉</a><button style="background:none;border:none;cursor:pointer;color:var(--text3);font-size:.85rem;transition:color .3s" onmouseover="this.style.color='#f87171'" onmouseout="this.style.color='var(--text3)'">🗑</button></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="inq-pan">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1.2rem">
+            <div>
+              <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.2rem">Karim El-Sayed</h3>
+              <p style="font-size:.78rem;color:var(--text3)">karim@example.com · +20 11 5555 1234</p>
+              <p style="font-size:.72rem;color:var(--text3);margin-top:.2rem">Vehicle Enquiry · Preferred: Morning</p>
+            </div>
+          </div>
+          <div style="background:var(--surface2);border:1px solid var(--border);border-radius:3px;padding:1rem;margin-bottom:1.2rem">
+            <p style="font-size:.88rem;color:var(--text2);line-height:1.8;font-style:italic">"I am interested in the Mercedes-Benz GLC 300. Can you provide more details on the available financing options and current availability? I would like to arrange a private viewing."</p>
+          </div>
+          <p style="font-size:.72rem;color:var(--text3);margin-bottom:1.2rem">Submitted: 2 hours ago</p>
+          <div style="display:flex;flex-direction:column;gap:.6rem">
+            <button class="btn btn-g btn-sm btn-w">Mark as Read</button>
+            <a href="mailto:karim@example.com?subject=Re: Vehicle Enquiry" class="btn btn-o btn-sm btn-w">Reply via Email</a>
+            <button class="btn btn-g btn-sm btn-w" style="color:#4ade80;border-color:rgba(74,222,128,.3)">Mark Replied ✓</button>
+            <button class="btn btn-sm btn-w" style="color:#f87171;border:1px solid rgba(248,113,113,.3);background:none">Delete</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+</div>
+
+
+<div class="page" id="page-admin-settings">
+<div class="adsh">
+  <aside class="adsi"><div style="padding:1.5rem;border-bottom:1px solid var(--border)"><span style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--gold)">WHEELS AUTOMOTIVE</span><p style="font-size:.6rem;text-transform:uppercase;letter-spacing:.2em;color:var(--text3);margin-top:.3rem">Admin Panel</p></div>
+    <nav style="flex:1;padding:.8rem 0"><a class="ani" onclick="sp('admin-dashboard')">📊 Dashboard</a><a class="ani" onclick="sp('admin-inventory')">🚗 Inventory</a><a class="ani" onclick="sp('admin-bookings')">📅 Bookings <span class="abd">2</span></a><a class="ani" onclick="sp('admin-inquiries')">💬 Inquiries <span class="abd">1</span></a><a class="ani act" onclick="sp('admin-settings')">⚙ Settings</a></nav>
+    <div style="padding:.8rem 0;border-top:1px solid var(--border)"><a class="ani" onclick="sp('home')" style="font-size:.78rem;color:var(--text3)">← Back to Website</a><a class="ani" onclick="sp('admin-login')" style="font-size:.78rem;color:var(--text3)">⎋ Logout</a></div>
+  </aside>
+  <div class="adm">
+    <header class="adtb"><h2 style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:300">Settings</h2></header>
+    <main class="adco">
+      <div id="stabs" class="tab-bar">
+        <button class="tab-b act" data-tab="tab-g" onclick="switchTab(this,'stabs')">General</button>
+        <button class="tab-b" data-tab="tab-h" onclick="switchTab(this,'stabs')">Hours</button>
+        <button class="tab-b" data-tab="tab-s" onclick="switchTab(this,'stabs')">Security</button>
+        <button class="tab-b" data-tab="tab-d" onclick="switchTab(this,'stabs')">Data</button>
+      </div>
+      <div class="tab-p" id="tab-g" style="display:block">
+        <div class="fsc"><p class="fsc-t">Dealership Information</p>
+          <div class="fsc-grid">
+            <div><label class="fl">Dealer Name</label><input type="text" class="form-inp" value="Wheels Automotive"/></div>
+            <div><label class="fl">Tagline</label><input type="text" class="form-inp" value="The Destination For Excellence."/></div>
+            <div><label class="fl">Address</label><input type="text" class="form-inp" value="46 El-Thawra Street, Almazah, Heliopolis, Cairo"/></div>
+            <div><label class="fl">Phone</label><input type="tel" class="form-inp" value="+20 10 9545 0210"/></div>
+            <div><label class="fl">Email</label><input type="email" class="form-inp" value="sales@wheels-egypt.com"/></div>
+            <div><label class="fl">WhatsApp Number</label><input type="text" class="form-inp" value="201095450210"/></div>
+          </div>
+        </div>
+        <button class="btn btn-s">Save Changes</button>
+      </div>
+      <div class="tab-p" id="tab-h">
+        <div class="fsc"><p class="fsc-t">Opening Hours</p>
+          <div>
+            <div class="hrs-row"><span class="hrs-day">Sunday</span><button class="tog on"></button><input type="time" value="11:00" class="form-inp" style="width:110px;margin:0 .5rem"/><span style="color:var(--text3)">–</span><input type="time" value="23:30" class="form-inp" style="width:110px;margin-left:.5rem"/></div>
+            <div class="hrs-row"><span class="hrs-day">Monday</span><button class="tog on"></button><input type="time" value="11:00" class="form-inp" style="width:110px;margin:0 .5rem"/><span style="color:var(--text3)">–</span><input type="time" value="23:30" class="form-inp" style="width:110px;margin-left:.5rem"/></div>
+            <div class="hrs-row"><span class="hrs-day">Tuesday</span><button class="tog on"></button><input type="time" value="11:00" class="form-inp" style="width:110px;margin:0 .5rem"/><span style="color:var(--text3)">–</span><input type="time" value="00:30" class="form-inp" style="width:110px;margin-left:.5rem"/></div>
+            <div class="hrs-row"><span class="hrs-day">Wednesday</span><button class="tog on"></button><input type="time" value="11:00" class="form-inp" style="width:110px;margin:0 .5rem"/><span style="color:var(--text3)">–</span><input type="time" value="23:30" class="form-inp" style="width:110px;margin-left:.5rem"/></div>
+            <div class="hrs-row"><span class="hrs-day">Thursday</span><button class="tog on"></button><input type="time" value="11:00" class="form-inp" style="width:110px;margin:0 .5rem"/><span style="color:var(--text3)">–</span><input type="time" value="23:30" class="form-inp" style="width:110px;margin-left:.5rem"/></div>
+            <div class="hrs-row"><span class="hrs-day">Friday</span><button class="tog on"></button><input type="time" value="14:00" class="form-inp" style="width:110px;margin:0 .5rem"/><span style="color:var(--text3)">–</span><input type="time" value="23:30" class="form-inp" style="width:110px;margin-left:.5rem"/></div>
+            <div class="hrs-row"><span class="hrs-day">Saturday</span><button class="tog on"></button><input type="time" value="11:00" class="form-inp" style="width:110px;margin:0 .5rem"/><span style="color:var(--text3)">–</span><input type="time" value="23:30" class="form-inp" style="width:110px;margin-left:.5rem"/></div>
+          </div>
+        </div>
+        <button class="btn btn-s">Save Hours</button>
+      </div>
+      <div class="tab-p" id="tab-s">
+        <div class="fsc" style="max-width:480px"><p class="fsc-t">Change Password</p>
+          <div style="display:flex;flex-direction:column;gap:1rem">
+            <div><label class="fl">Current Password</label><input type="password" class="form-inp" placeholder="••••••••"/></div>
+            <div><label class="fl">New Password</label><input type="password" class="form-inp" placeholder="••••••••"/></div>
+            <div><label class="fl">Confirm New Password</label><input type="password" class="form-inp" placeholder="••••••••"/></div>
+          </div>
+        </div>
+        <button class="btn btn-s">Change Password</button>
+      </div>
+      <div class="tab-p" id="tab-d">
+        <div class="fsc" style="max-width:480px"><p class="fsc-t">Data Management</p>
+          <div style="display:flex;flex-direction:column;gap:.8rem">
+            <button class="btn btn-o btn-w">Export All Data ↓</button>
+            <button class="btn btn-g btn-w">Import Data ↑</button>
+            <button class="btn btn-w" style="border:1px solid rgba(239,68,68,.3);color:#f87171;background:none">Reset to Demo Data</button>
+          </div>
+          <p style="font-size:.78rem;color:var(--text3);margin-top:1rem">Export creates a full JSON backup of all inventory, bookings, inquiries, and settings.</p>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+</div>
+
+<footer class="ft" id="site-footer">
+<div class="con">
+  <div class="ft-g">
+    <div>
+      <span style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--gold)">WHEELS AUTOMOTIVE</span>
+<p style="color:var(--text2);font-size:1rem;max-width:480px;line-height:1.7;margin-bottom:2.5rem;animation:fadeUp .5s 1.1s both">Cairo's premier showroom for zero-mile luxury and performance vehicles.</p>
+
+      <div style="display:flex;gap:.6rem">
+        <a href="#" class="ft-sc">FB</a>
+        <a href="#" class="ft-sc">IG</a>
+        <a href="https://wa.me/201095450210" class="ft-sc" target="_blank">WA</a>
+      </div>
+    </div>
+    <div>
+      <p class="ft-h">Navigate</p>
+      <ul class="ft-l">
+        <li><a onclick="sp('home')">Home</a></li>
+        <li><a onclick="sp('inventory')">Inventory</a></li>
+        <li><a onclick="sp('services')">Services</a></li>
+        <li><a onclick="sp('about')">About</a></li>
+        <li><a onclick="sp('contact')">Contact</a></li>
+        <li><a onclick="sp('book')">Book Test Drive</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="ft-h">Services</p>
+      <ul class="ft-l">
+        <li><a href="#">Vehicle Import</a></li>
+        <li><a href="#">Car Financing</a></li>
+        <li><a href="#">Trade-In</a></li>
+        <li><a href="#">Extended Warranty</a></li>
+        <li><a href="#">Concierge Delivery</a></li>
+        <li><a href="#">Customisation</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="ft-h">Newsletter</p>
+      <p style="font-size:.82rem;color:var(--text3);margin-bottom:1rem;line-height:1.7">Be first to know about exclusive arrivals.</p>
+      <div style="display:flex;gap:0;margin-bottom:1.5rem">
+        <input type="email" placeholder="Your email" class="form-inp" style="border-radius:3px 0 0 3px;border-right:none"/>
+        <button class="btn btn-r" style="border-radius:0 3px 3px 0;white-space:nowrap">→</button>
+      </div>
+      <div style="font-size:.82rem;color:var(--text3);display:flex;flex-direction:column;gap:.4rem">
+        <p>📍 46 El-Thawra Street, Almazah, Heliopolis, Cairo</p>
+        <p>📞 <a href="tel:+201095450210" style="color:var(--text3);text-decoration:none;transition:color .3s" onmouseover="this.style.color='var(--sapphire-bright)'" onmouseout="this.style.color='var(--text3)'">+20 10 9545 0210</a></p>
+        <p>✉ sales@wheels-egypt.com</p>
+        <p>🕐 Sun–Thu & Sat: 11AM–11:30PM</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div style="border-top:1px solid var(--border);padding:1.2rem 0">
+  <div class="con ft-bot">
+    <p>© 2026 Wheels Automotive. All Rights Reserved.</p>
+    <p>Designed for Exceptional Clients</p>
+  </div>
+</div>
+</footer>
+
+<a href="https://wa.me/201095450210" target="_blank" class="waf" id="waf">
+  <span class="waf-lb">Chat with us</span>
+  <div class="waf-c">
+    <svg viewBox="0 0 24 24" fill="white" width="24" height="24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    <div class="waf-r"></div>
+  </div>
+</a>
+<button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑</button>
+<div id="ck">
+  <p style="font-size:.85rem;color:var(--text2)">We use cookies to enhance your experience.</p>
+  <div style="display:flex;gap:.8rem;flex-shrink:0">
+    <button class="btn btn-s btn-sm" onclick="dismissCK()">Accept All</button>
+    <button class="btn btn-g btn-sm" onclick="dismissCK()">Preferences</button>
+  </div>
+</div>
+
+<script>
+// ══ DATA ══
+const CARS=[
+  {id:1,slug:'rolls-royce-ghost-2024',brand:'Rolls-Royce',model:'Ghost',year:2024,price:'£E 18,500,000',mileage:'Brand New',condition:'New',color:'Arctic White',hp:'571 hp',acc:'4.8s',speed:'250 km/h',img:'https://images.unsplash.com/photo-1631295868223-63265b40d9e4?w=800&q=80'},
+  {id:2,slug:'bentley-continental-gt-2023',brand:'Bentley',model:'Continental GT',year:2023,price:'£E 12,800,000',mileage:'8,000 km',condition:'Pre-Owned',color:'Midnight Emerald',hp:'659 hp',acc:'3.6s',speed:'333 km/h',img:'1-continental-gt.avif'},
+  {id:3,slug:'porsche-911-turbo-s-2024',brand:'Porsche',model:'911 Turbo S',year:2024,price:'£E 7,600,000',mileage:'Brand New',condition:'New',color:'Gentian Blue',hp:'650 hp',acc:'2.7s',speed:'330 km/h',img:'https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&q=80'},
+  {id:4,slug:'lamborghini-urus-2024',brand:'Lamborghini',model:'Urus',year:2024,price:'£E 9,800,000',mileage:'Brand New',condition:'New',color:'Giallo Orion',hp:'650 hp',acc:'3.6s',speed:'305 km/h',img:'Lamborghini-Urus-scaled.webp'},
+  {id:5,slug:'aston-martin-vantage-2023',brand:'Aston Martin',model:'Vantage',year:2023,price:'£E 6,900,000',mileage:'12,000 km',condition:'Pre-Owned',color:'Lunar White',hp:'503 hp',acc:'3.6s',speed:'314 km/h',img:'1-continental-gt.avif'},
+  {id:6,slug:'mercedes-amg-g63-2024',brand:'Mercedes-Benz',model:'AMG G63',year:2024,price:'£E 10,200,000',mileage:'Brand New',condition:'New',color:'Obsidian Black',hp:'577 hp',acc:'4.5s',speed:'220 km/h',img:'https://images.unsplash.com/photo-1520031441872-265e4ff70366?w=800&q=80'},
+  {id:7,slug:'ferrari-f8-tributo-2023',brand:'Ferrari',model:'F8 Tributo',year:2023,price:'£E 14,500,000',mileage:'3,500 km',condition:'Pre-Owned',color:'Rosso Corsa',hp:'710 hp',acc:'2.9s',speed:'340 km/h',img:'https://images.unsplash.com/photo-1592198084033-aade902d1aae?w=800&q=80'},
+  {id:8,slug:'range-rover-sv-2024',brand:'Range Rover',model:'Autobiography SV',year:2024,price:'£E 8,900,000',mileage:'Brand New',condition:'New',color:'Santorini Black',hp:'523 hp',acc:'4.6s',speed:'250 km/h',img:'https://images.unsplash.com/photo-1563720360172-67b8f3dce741?w=800&q=80'}
+];
+
+// ══ WISHLIST ══
+let wl=JSON.parse(localStorage.getItem('lc_wl')||'[]');
+function saveWL(){localStorage.setItem('lc_wl',JSON.stringify(wl));document.getElementById('wc').textContent=wl.length;document.getElementById('wl-count').textContent=wl.length}
+function toggleWL(id,btn){if(wl.includes(id)){wl=wl.filter(i=>i!==id);if(btn){btn.textContent='♡';btn.classList.remove('saved')}}else{wl.push(id);if(btn){btn.textContent='♥';btn.classList.add('saved')}}saveWL();renderWL()}
+function toggleWLDet(){const id=1;toggleWL(id,null);const b=document.getElementById('wl-det-btn');b.textContent=wl.includes(id)?'♥ Saved':'♡ Save to Wishlist'}
+
+// ══ CAR CARD ══
+function makeCard(c,extra){
+  const saved=wl.includes(c.id);
+  return`<div class="cc" onclick="sp('detail')">
+    <div class="cc-img"><img src="${c.img}" alt="${c.brand} ${c.model}" loading="lazy" onload="this.classList.add('loaded')"/>
+    <div class="cc-badge">${c.condition==='New'?'NEW':'PRE-OWNED'}</div>
+    <button class="cc-heart${saved?' saved':''}" onclick="event.stopPropagation();toggleWL(${c.id},this)">${saved?'♥':'♡'}</button>
+    ${extra||''}</div>
+    <div class="cc-body">
+      <div class="cc-brand">${c.brand}</div>
+      <div class="cc-name">${c.model}</div>
+      <div class="cc-meta">${c.year} · ${c.mileage} · ${c.color}</div>
+      <div class="cc-specs">
+        <div class="cs"><div class="cs-v">${c.hp}</div><div class="cs-k">Power</div></div>
+        <div class="cs"><div class="cs-v">${c.acc}</div><div class="cs-k">0–100</div></div>
+        <div class="cs"><div class="cs-v">${c.speed}</div><div class="cs-k">Top Speed</div></div>
+      </div>
+      <div class="cc-price">${c.price}</div>
+      <div class="cc-acts">
+        <a onclick="event.stopPropagation();sp('detail')" class="btn btn-o btn-sm" style="flex:1;text-align:center">View Details</a>
+        <a onclick="event.stopPropagation();sp('book')" class="btn btn-g btn-sm" style="flex:1;text-align:center">Test Drive</a>
+      </div>
+    </div>
+  </div>`
+}
+
+function renderFeatured(){
+  const c=document.getElementById('feat-sr');
+  if(c)c.innerHTML=CARS.map(car=>makeCard(car)).join('');
+}
+function renderInventory(){
+  const c=document.getElementById('inv-grid');
+  if(c)c.innerHTML=CARS.map((car,i)=>`<div data-r data-d="${(i%3)+1}">${makeCard(car)}</div>`).join('');
+}
+function renderArrivals(){
+  const c=document.getElementById('arrivals-grid');
+  if(c)c.innerHTML=CARS.slice(4,7).map(car=>makeCard(car,`<div class="arr-rib">NEW ARRIVAL</div>`)).join('');
+}
+function renderSimilar(){
+  const c=document.getElementById('sim-row');
+  if(c)c.innerHTML=CARS.slice(1).map(car=>`<div style="min-width:280px;flex-shrink:0;scroll-snap-align:start">${makeCard(car)}</div>`).join('');
+}
+function renderWL(){
+  const g=document.getElementById('wl-grid');
+  const e=document.getElementById('wl-empty');
+  const cnt=document.getElementById('wl-count');
+  if(!g)return;
+  const saved=CARS.filter(c=>wl.includes(c.id));
+  cnt.textContent=saved.length;
+  if(saved.length===0){g.style.display='none';if(e)e.style.display='block';return}
+  if(e)e.style.display='none';
+  g.style.display='grid';
+  g.innerHTML=saved.map(car=>makeCard(car)).join('');
+}
+
+// ══ PAGE ROUTER ══
+function sp(id){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  const page=document.getElementById('page-'+id);
+  if(page)page.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+  // nav links
+  document.querySelectorAll('.na').forEach(l=>l.classList.toggle('act',l.dataset.p===id));
+  // footer & navbar visibility
+  const isAdmin=id.startsWith('admin');
+  const ft=document.getElementById('site-footer');
+  const nav=document.getElementById('nav');
+  const waf=document.getElementById('waf');
+  const btt=document.getElementById('btt');
+  const ck = document.getElementById('ck');
+  ck.classList.add('hid'); 
+  localStorage.setItem('cookiesAccepted', 'true');
+  if(ft)ft.style.display=isAdmin?'none':'block';
+  if(nav)nav.style.display=isAdmin?'none':'block';
+  if(waf)waf.style.display=isAdmin?'none':'flex';
+  if(btt){if(isAdmin)btt.classList.remove('vis');}
+  if(ck&&isAdmin)ck.style.display='none';
+  setTimeout(initReveal,100);
+  if(id==='wishlist')renderWL();
+  if(id==='contact'||id==='book')renderOpenBadge();
+}
+
+// ══ SCROLL REVEAL ══
+function initReveal() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('on');
+      } else {
+        entry.target.classList.remove('on');
+      }
+    });
+  }, { 
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px' 
+  });
+
+  document.querySelectorAll('[data-r]').forEach(el => {
+    observer.observe(el);
+  });
+}
+
+// ══ COUNT UP ══
+function countUp(el,target){
+  const sf=el.dataset.sf||'';
+  const dur=1500,start=Date.now();
+  const tick=()=>{
+    const p=Math.min((Date.now()-start)/dur,1);
+    const ease=1-Math.pow(1-p,3);
+    el.textContent=Math.floor(ease*target).toLocaleString()+sf;
+    if(p<1)requestAnimationFrame(tick);
+    else el.textContent=target.toLocaleString()+sf;
+  };
+  tick();
+}
+function initCountUps(){
+  const obs=new IntersectionObserver(en=>{en.forEach(e=>{if(e.isIntersecting){const t=parseInt(e.target.dataset.cu);countUp(e.target,t);obs.unobserve(e.target)}})},{threshold:.5});
+  document.querySelectorAll('[data-cu]').forEach(el=>obs.observe(el));
+}
+
+// ══ HERO WORDS ══
+function initHeroWords(){
+  const h=document.getElementById('hero-title');
+  if(!h)return;
+  const html=h.innerHTML;
+  const parts=html.split(/(<[^>]+>.*?<\/[^>]+>|\S+)/g).filter(p=>p.trim());
+  h.innerHTML=parts.map((p,i)=>p.startsWith('<')?`<span class="hw" style="animation-delay:${.5+i*.08}s">${p}</span>`:`<span class="hw" style="animation-delay:${.5+i*.08}s">${p}</span>`).join(' ');
+}
+
+// ══ TESTIMONIALS ══
+let tIdx=0,tTimer;
+function showTest(i){
+  const items=document.querySelectorAll('.test-i');
+  const dots=document.querySelectorAll('.tdot');
+  items.forEach((el,idx)=>el.classList.toggle('act',idx===i));
+  dots.forEach((el,idx)=>el.classList.toggle('act',idx===i));
+  tIdx=i;
+}
+function navTest(d){showTest((tIdx+d+5)%5)}
+function initTestimonials(){
+  const dw=document.getElementById('tdots');
+  if(!dw)return;
+  dw.innerHTML=[...Array(5)].map((_,i)=>`<div class="tdot${i===0?' act':''}" onclick="showTest(${i})"></div>`).join('');
+  tTimer=setInterval(()=>navTest(1),7000);
+  const sec=document.getElementById('test-sec');
+  if(sec){sec.addEventListener('mouseenter',()=>clearInterval(tTimer));sec.addEventListener('mouseleave',()=>{tTimer=setInterval(()=>navTest(1),7000)});}
+  let tx=0;
+  sec?.addEventListener('touchstart',e=>{tx=e.touches[0].clientX});
+  sec?.addEventListener('touchend',e=>{const d=tx-e.changedTouches[0].clientX;if(Math.abs(d)>50)navTest(d>0?1:-1)});
+}
+
+// ══ GALLERY ══
+const LB_IMGS=['SaveInsta.me_599050988_18006695342821394_3797459272157109471_n.jpg','SaveInsta.me_590888426_18006695387821394_7306171190637413061_n.jpg','SaveInsta.me_589907989_18006695360821394_5036669771278930665_n.jpg','SaveInsta.me_587766262_18006695309821394_3027646711437904788_n.jpg','SaveInsta.me_587538018_18006695375821394_3193867463868193447_n.jpg','SaveInsta.me_587520600_18006695363821394_4885835504380588045_n.jpg','SaveInsta.me_587510901_18006695339821394_6906373387723071844_n.jpg','SaveInsta.me_587288740_18006695300821394_8433441324118045845_n.jpg','SaveInsta.me_586677885_18006695345821394_378714102122022522_n.jpg'];
+let lbIdx=0;
+function openLB(i){lbIdx=i;document.getElementById('lb').style.display='flex';document.getElementById('lb-img').src=LB_IMGS[lbIdx];document.getElementById('lb-c').textContent=`${i+1} / ${LB_IMGS.length}`}
+function closeLB(){document.getElementById('lb').style.display='none'}
+function navLB(d){lbIdx=(lbIdx+d+LB_IMGS.length)%LB_IMGS.length;document.getElementById('lb-img').src=LB_IMGS[lbIdx];document.getElementById('lb-c').textContent=`${lbIdx+1} / ${LB_IMGS.length}`}
+function switchG(btn,src){document.getElementById('gm').src=src;document.querySelectorAll('.gth').forEach(t=>t.classList.remove('act'));btn.classList.add('act')}
+
+// ══ ACCORDION ══
+function toggleAcc(item){
+  const b=item.querySelector('.acc-b');
+  const open=item.classList.contains('open');
+  document.querySelectorAll('.acc-i.open').forEach(el=>{el.classList.remove('open');el.querySelector('.acc-b').style.maxHeight='0'});
+  if(!open){item.classList.add('open');b.style.maxHeight=b.scrollHeight+'px'}
+}
+
+// ══ BOOKING ══
+let bStep=1;
+function goStep(n){
+  for(let i=1;i<=5;i++){const el=document.getElementById('bs'+i);if(el)el.className='bstep'+(i===n?' act':'')}
+  document.querySelectorAll('.sdot').forEach((d,i)=>{d.classList.toggle('act',i+1===n);d.classList.toggle('dn',i+1<n)})
+  bStep=n;
+}
+function confirmBook(){
+  const btn=document.getElementById('confirm-btn');
+  btn.textContent='Confirming…';btn.disabled=true;
+  setTimeout(()=>goStep(5),1200);
+}
+
+// ══ FINANCE CALC ══
+let fcTerm=48,fcDown=20;
+function updateFC(v){
+  fcDown=parseInt(v);
+  const dp=6300000*fcDown/100;
+  document.getElementById('dp-lbl').textContent=`${fcDown}% · £E ${dp.toLocaleString()}`;
+  calcFC();
+}
+function setTerm(t,btn){
+  fcTerm=t;
+  document.querySelectorAll('[onclick^="setTerm"]').forEach(b=>b.className='btn btn-g btn-sm');
+  btn.className='btn btn-s btn-sm';
+  calcFC();
+}
+function calcFC(){
+  const price=6300000;
+  const loan=price*(1-fcDown/100);
+  const r=0.18/12;
+  const monthly=loan*r*Math.pow(1+r,fcTerm)/(Math.pow(1+r,fcTerm)-1);
+  document.getElementById('fc-out').textContent='£E '+Math.round(monthly).toLocaleString()+' / mo';
+}
+
+// ══ CALENDAR ══
+function buildCal(){
+  const g=document.getElementById('cal-grid');
+  if(!g)return;
+  const days=['Su','Mo','Tu','We','Th','Fr','Sa'];
+  const now=new Date();const yr=now.getFullYear();const mo=now.getMonth();
+  const first=new Date(yr,mo,1).getDay();const daysInMo=new Date(yr,mo+1,0).getDate();
+  let html=days.map(d=>`<div class="cal-dh">${d}</div>`).join('');
+  for(let i=0;i<first;i++)html+=`<div></div>`;
+  for(let d=1;d<=daysInMo;d++){
+    const past=d<now.getDate();
+    const today=d===now.getDate();
+    html+=`<div class="cal-d${today?' today':past?' past':''}" ${!past?`onclick="this.parentNode.querySelectorAll('.cal-d').forEach(x=>x.classList.remove('sel'));this.classList.add('sel')"`:''}>${d}</div>`;
+  }
+  g.innerHTML=html;
+  const mEl=document.getElementById('cal-month');
+  if(mEl)mEl.textContent=new Date(yr,mo).toLocaleDateString('en',{month:'long',year:'numeric'});
+}
+
+// ══ OPEN/CLOSED ══
+function isOpen(){const d=new Date(),day=d.getDay(),h=d.getHours()+d.getMinutes()/60;return day===5?h>=14&&h<23.5:day===2?h>=11&&h<24.5:h>=11&&h<23.5}
+function renderOpenBadge(){
+  ['open-bd','open-badge'].forEach(id=>{
+    const el=document.getElementById(id);
+    if(!el)return;
+    const o=isOpen();
+    el.innerHTML=`<span style="display:inline-flex;align-items:center;gap:.5rem;padding:.4rem .9rem;border-radius:3px;font-size:.75rem;font-weight:500;background:${o?'rgba(74,222,128,.1)':'var(--surface2)'};border:1px solid ${o?'rgba(74,222,128,.3)':'var(--border)'};color:${o?'#4ade80':'var(--text3)'}"><span style="width:7px;height:7px;border-radius:50%;background:currentColor${o?';animation:pulse 2s infinite':''}"></span>${o?'Open Now':'Currently Closed'}</span>`;
+  });
+}
+
+// ══ SCROLL ══
+window.addEventListener('scroll',()=>{
+  document.getElementById('nav').classList.toggle('sc',scrollY>80);
+  document.getElementById('sp').style.width=(scrollY/(document.body.scrollHeight-innerHeight)*100)+'%';
+  document.getElementById('btt').classList.toggle('vis',scrollY>600);
+},{passive:true});
+
+// ══ TABS ══
+function switchTab(btn,gId){
+  const g=document.getElementById(gId);
+  g.querySelectorAll('.tab-b').forEach(b=>b.classList.remove('act'));
+  g.querySelectorAll('.tab-p').forEach(p=>p.style.display='none');
+  btn.classList.add('act');
+  const panel=document.getElementById(btn.dataset.tab);
+  if(panel)panel.style.display='block';
+}
+
+// ══ MISC ══
+function scrollRow(id,d){const el=document.getElementById(id);if(el)el.scrollBy({left:d*340,behavior:'smooth'})}
+function dismissCK(){const c=document.getElementById('ck');c.classList.add('hid');setTimeout(()=>c.remove(),400)}
+function copyLink(){navigator.clipboard?.writeText(location.href).then(()=>{const b=document.querySelector('[onclick="copyLink()"]');if(b){const o=b.textContent;b.textContent='Copied!';setTimeout(()=>b.textContent=o,2000)}})}
+function doLogin(){
+  const e=document.getElementById('l-email')?.value;
+  const p=document.getElementById('l-pass')?.value;
+  const err=document.getElementById('l-err');
+  if(e==='admin@wheels-egypt.com'&&p==='wheels2026'){sp('admin-dashboard')}
+  else{if(err)err.style.display='block';const c=document.getElementById('login-card');c.style.animation='none';setTimeout(()=>{c.style.animation='shake .4s ease';setTimeout(()=>c.style.animation='none',400)},10)}
+}
+
+// ══ PILLS INTERACTIVE ══
+document.addEventListener('click',e=>{
+  const pill=e.target.closest('.pill');
+  if(pill)pill.classList.toggle('on');
+  const tog=e.target.closest('.tog');
+  if(tog)tog.classList.toggle('on');
+  const ts=e.target.closest('.ts');
+  if(ts){document.querySelectorAll('.ts').forEach(t=>t.classList.remove('sel'));ts.classList.add('sel')}
+});
+
+// ══ IMAGE ONLOAD ══
+document.addEventListener('load',e=>{if(e.target.tagName==='IMG')e.target.classList.add('loaded')},true);
+
+// ══ KEYBOARD ══
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){closeLB();document.getElementById('del-modal').style.display='none';document.getElementById('mm').classList.remove('open')}
+  if(document.getElementById('lb').style.display==='flex'){if(e.key==='ArrowRight')navLB(1);if(e.key==='ArrowLeft')navLB(-1)}
+});
+
+// ══ INIT ══
+document.addEventListener('DOMContentLoaded',()=>{
+  renderFeatured();
+  renderInventory();
+  renderArrivals();
+  renderSimilar();
+  renderWL();
+  saveWL();
+  initReveal();
+  initCountUps();
+  initHeroWords();
+  setTimeout(initTestimonials,200);
+  buildCal();
+  renderOpenBadge();
+  // init settings tabs
+  const firstTab=document.querySelector('#stabs .tab-b');
+  if(firstTab){firstTab.classList.add('act');const fp=document.getElementById(firstTab.dataset.tab);if(fp)fp.style.display='block'}
+});
+</script>
+
+<script>
+const showroomImages = [
+  "wheels.eg_1775226521_3867202145799952992_54597789393.jpg",
+  "wheels.eg_1773084572_3849232714935311113_54597789393.jpg",
+  "wheels.eg_1772995434_3848485748701979041_54597789393.jpg",
+  "wheels.eg_1772131953_3841243057496793022_54597789393.jpg",
+  "wheels.eg_1771274753_3834052877358780939_54597789393.jpg",
+  "wheels.eg_1768501332_3810787840158606830_54597789393.jpg"
+];
+
+let currentSlide = 0;
+const sliderImg = document.getElementById("slider-img");
+
+function showSlide(index){
+  sliderImg.style.opacity = 0;
+
+  setTimeout(() => {
+    currentSlide = (index + showroomImages.length) % showroomImages.length;
+    sliderImg.src = showroomImages[currentSlide];
+    sliderImg.style.opacity = 1;
+  }, 300);
+}
+
+function nextSlide(){
+  showSlide(currentSlide + 1);
+}
+
+function prevSlide(){
+  showSlide(currentSlide - 1);
+}
+
+// Auto play every 4 seconds
+setInterval(() => {
+  nextSlide();
+}, 3000);
+</script>
+
+
+</body>
+</html>
